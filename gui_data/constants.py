@@ -538,26 +538,26 @@ TIME_TEXT = '_时间拉伸'
 PITCH_TEXT = '_音高偏移'
 
 #RegEx Input Validation
-REG_PITCH = r'^[-+]?(1[0]|[0-9]([.][0-9]*)?)$'
-REG_TIME = r'^[+]?(1[0]|[0-9]([.][0-9]*)?)$'
-REG_COMPENSATION = r'\b^(1[0]|[0-9]([.][0-9]*)?|Auto|None)$\b'
-REG_THES_POSTPORCESS = r'\b^([0]([.][0-9]{0,6})?)$\b'
-REG_CHUNKS = r'\b^(200|1[0-9][0-9]|[1-9][0-9]?|Auto|Full)$\b'
-REG_CHUNKS_DEMUCS = r'\b^(200|1[0-9][0-9]|[1-9][0-9]?|Auto|Full)$\b'
-REG_MARGIN = r'\b^[0-9]*$\b'
-REG_SEGMENTS = r'\b^(200|1[0-9][0-9]|[1-9][0-9]?|Default)$\b'
-REG_SAVE_INPUT = r'\b^([a-zA-Z0-9 -]{0,25})$\b'
-REG_INPUT_STEM_NAME = r'^(Wind Inst|[a-zA-Z]{1,25})$'
-REG_SEMITONES = r'^-?(20\.00|[01]?\d(\.\d{1,2})?|20)$'
-REG_AGGRESSION = r'^[-+]?[0-9]\d*?$'
-REG_WINDOW = r'\b^[0-9]{0,4}$\b'
-REG_SHIFTS = r'\b^[0-9]*$\b'
-REG_BATCHES = r'\b^([0-9]*?|Default)$\b'
-REG_OVERLAP = r'\b^([0]([.][0-9]{0,6})?|Default)$\b'#r"(Default|[0-9]+(\.[0-9]+)?)"#
-REG_OVERLAP23 = r'\b^([1][0-9]|[2-9][0-9]*|Default)$\b'#r'\b^([2-9][0-9]*?|Default)$\b'
-REG_MDX_SEG = r'\b(?:' + '|'.join([str(num) for num in range(32, 1000001, 32)]) + r')\b'
-REG_ALIGN = r'^[-+]?[0-9]\d*?$'
-REG_VOL_COMP = r'^\d+\.\d{1,9}$'
+REG_PITCH = r'^[-+]?(1[0]|[0-9]([.][0-9]*)?)$'  # 音高验证
+REG_TIME = r'^[+]?(1[0]|[0-9]([.][0-9]*)?)$'  # 时间验证
+REG_COMPENSATION = r'\b^(1[0]|[0-9]([.][0-9]*)?|自动|无)$\b'  # 补偿验证
+REG_THES_POSTPORCESS = r'\b^([0]([.][0-9]{0,6})?)$\b'  # 后处理阈值验证
+REG_CHUNKS = r'\b^(200|1[0-9][0-9]|[1-9][0-9]?|自动|完整)$\b'  # 分块验证
+REG_CHUNKS_DEMUCS = r'\b^(200|1[0-9][0-9]|[1-9][0-9]?|自动|完整)$\b'  # Demucs分块验证
+REG_MARGIN = r'\b^[0-9]*$\b'  # 边缘验证
+REG_SEGMENTS = r'\b^(200|1[0-9][0-9]|[1-9][0-9]?|默认)$\b'  # 分段验证
+REG_SAVE_INPUT = r'\b^([a-zA-Z0-9 -]{0,25})$\b'  # 保存输入验证
+REG_INPUT_STEM_NAME = r'^(管乐器|[a-zA-Z]{1,25})$'  # 音轨名称验证
+REG_SEMITONES = r'^-?(20\.00|[01]?\d(\.\d{1,2})?|20)$'  # 半音验证
+REG_AGGRESSION = r'^[-+]?[0-9]\d*?$'  # 激进度验证
+REG_WINDOW = r'\b^[0-9]{0,4}$\b'  # 窗口验证
+REG_SHIFTS = r'\b^[0-9]*$\b'  # 移位验证
+REG_BATCHES = r'\b^([0-9]*?|默认)$\b'  # 批次验证
+REG_OVERLAP = r'\b^([0]([.][0-9]{0,6})?|默认)$\b'  # 重叠验证
+REG_OVERLAP23 = r'\b^([1][0-9]|[2-9][0-9]*|默认)$\b'  # 重叠23验证
+REG_MDX_SEG = r'\b(?:' + '|'.join([str(num) for num in range(32, 1000001, 32)]) + r')\b'  # MDX分段验证
+REG_ALIGN = r'^[-+]?[0-9]\d*?$'  # 对齐验证
+REG_VOL_COMP = r'^\d+\.\d{1,9}$'  # 音量补偿验证
 
 # 子菜单
 VR_ARCH_SETTING_LOAD = '加载VR架构设置'
