@@ -1188,16 +1188,16 @@ PRE_PROC_MODEL_ACTIVATE_HELP = (
 )
       
 AUDIO_TOOLS_HELP = (
-    'Select from various audio tools to process your track:\n'
+    '从各种音频工具中选择处理您的音轨:\n'
     '\n'
-    '• Manual Ensemble: Requires 2 or more selected files as inputs. This allows tracks to be processed using the algorithms from Ensemble Mode.\n'
-    '• Time Stretch: Adjust the playback speed of the selected inputs to be faster or slower.\n'
-    '• Change Pitch: Modify the pitch of the selected inputs.\n'
-    '• Align Inputs: Choose 2 audio file and the application will align them and provide the difference in alignment.\n'
-    '    - This tool provides similar functionality to "Utagoe."\n'
-    '    - Primary Audio: This is usually a mixture.\n'
-    '    - Secondary Audio: This is usually an instrumental.\n'
-    '• Matchering: Choose 2 audio files. The matchering algorithm will master the target audio to have the same RMS, FR, peak amplitude, and stereo width as the reference audio.'
+    '• 手动合奏: 需要2个或更多选定的文件作为输入。这允许使用合奏模式的算法处理音轨。\n'
+    '• 时间拉伸: 调整所选输入的播放速度，使其更快或更慢。\n'
+    '• 音高变更: 修改所选输入的音高。\n'
+    '• 对齐输入: 选择2个音频文件，应用程序将对齐它们并提供对齐差异。\n'
+    '    - 此工具提供类似于"Utagoe"的功能。\n'
+    '    - 主音频: 通常是混音。\n'
+    '    - 次音频: 通常是伴奏。\n'
+    '• 音频匹配: 选择2个音频文件。匹配算法将使目标音频具有与参考音频相同的RMS、频率响应、峰值振幅和立体声宽度。'
 )
              
 PRE_PROC_MODEL_INST_MIX_HELP = 'When enabled, the application will generate a third output without the selected stem and vocals.'         
