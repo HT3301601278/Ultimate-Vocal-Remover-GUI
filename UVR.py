@@ -3454,7 +3454,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         settings_menu.protocol("WM_DELETE_WINDOW", close_window)
 
     def menu_advanced_vr_options(self):#**
-        """Open Advanced VR Options"""     
+        """打开高级 VR 选项"""     
 
         vr_opt = tk.Toplevel()
         
@@ -3530,7 +3530,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.menu_placement(vr_opt, ADVANCED_VR_OPTIONS_TEXT, is_help_hints=True, close_function=self.menu_advanced_vr_options_close_window, frame_list=frame_list)
 
     def menu_advanced_demucs_options(self):#**
-        """Open Advanced Demucs Options"""
+        """打开高级 Demucs 选项"""
         
         demuc_opt = tk.Toplevel()
 
@@ -3601,7 +3601,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.menu_placement(demuc_opt, ADVANCED_DEMUCS_OPTIONS_TEXT, is_help_hints=True, close_function=self.menu_advanced_demucs_options_close_window, frame_list=frame_list)
         
     def menu_advanced_mdx_options(self):#**
-        """Open Advanced MDX Options"""
+        """打开高级 MDX 选项"""
 
         mdx_net_opt = tk.Toplevel()
 
@@ -3710,7 +3710,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.menu_placement(mdx_net_opt, ADVANCED_MDXNET_OPTIONS_TEXT, is_help_hints=True, close_function=self.menu_advanced_mdx_options_close_window, frame_list=frame_list)
 
     def menu_advanced_ensemble_options(self):#**
-        """Open Ensemble Custom"""
+        """打开集成自定义选项"""
         
         custom_ens_opt = tk.Toplevel()
         
@@ -3754,7 +3754,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.menu_placement(custom_ens_opt, ADVANCED_ENSEMBLE_OPTIONS_TEXT, is_help_hints=True, close_function=self.menu_advanced_ensemble_options_close_window)
 
     def menu_advanced_align_options(self):#**
-        """Open Ensemble Custom"""
+        """打开高级对齐工具选项"""
         
         advanced_align_opt = tk.Toplevel()
         
@@ -3801,7 +3801,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.menu_placement(advanced_align_opt, ADVANCED_ALIGN_TOOL_OPTIONS_TEXT, is_help_hints=True, close_function=self.menu_advanced_align_options_close_window)
          
     def menu_help(self):#**
-        """Open Help Guide"""
+        """打开帮助指南"""
         
         help_guide_opt = tk.Toplevel()
 
@@ -3895,31 +3895,31 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         credit_label(place=8,
                      frame=credits_Frame,
                      text="Kuielab & Woosung Choi",
-                     message="Developed the original MDX-Net AI code.",
+                     message="开发了原始的 MDX-Net AI 代码。",
                      link="https://github.com/kuielab",
                      is_link=True)
         
         credit_label(place=10,
-                     frame=credits_Frame,
+                     frame=credits_Frame, 
                      text="Adefossez & Demucs",
-                     message="Core developer of Facebook's Demucs Music Source Separation.",
+                     message="Facebook Demucs 音源分离的核心开发者。",
                      link="https://github.com/facebookresearch/demucs",
                      is_link=True)
         
         credit_label(place=12,
                      frame=credits_Frame,
                      text="Bas Curtiz",
-                     message="Designed the official UVR logo, icon, banner, splash screen.")
+                     message="设计了 UVR 的官方标志、图标、横幅和启动画面。")
         
         credit_label(place=14,
                      frame=credits_Frame,
                      text="DilanBoskan",
-                     message="Your contributions at the start of this project were essential to the success of UVR. Thank you!")
+                     message="您在项目初期的贡献对 UVR 的成功至关重要。感谢您！")
         
         credit_label(place=16,
                      frame=credits_Frame,
-                     text="Audio Separation and CC Karaoke & Friends Discord Communities",
-                     message="Thank you for the support!")
+                     text="Audio Separation 和 CC Karaoke & Friends Discord 社区",
+                     message="感谢您的支持！")
 
         more_info_tab_Frame = tk.Frame(tab2, highlightthicknes=30)
         more_info_tab_Frame.grid(row=0,column=0,padx=0,pady=0)
@@ -3930,25 +3930,25 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
 
         Link(place=4, 
              frame=more_info_tab_Frame, 
-             text="Ultimate Vocal Remover (Official GitHub)", 
+             text="Ultimate Vocal Remover (官方 GitHub)", 
              link="https://github.com/Anjok07/ultimatevocalremovergui", 
-             description="You can find updates, report issues, and give us a shout via our official GitHub.",
+             description="您可以在我们的官方 GitHub 上找到更新、报告问题和与我们交流。",
              font=FONT_SIZE_1)
         
         Link(place=8, 
              frame=more_info_tab_Frame, 
              text="X-Minus AI", 
              link="https://x-minus.pro/ai", 
-             description="Many of the models provided are also on X-Minus.\n" + \
-                         "X-Minus benefits users without the computing resources to run the GUI or models locally.",
+             description="许多提供的模型也在 X-Minus 上。\n" + \
+                         "X-Minus 适用于没有计算资源在本地运行 GUI 或模型的用户。",
              font=FONT_SIZE_1)
         
         Link(place=12, 
              frame=more_info_tab_Frame, 
              text="MVSep", 
              link="https://mvsep.com/quality_checker/leaderboard.php", 
-             description="Some of our models are also on MVSep.\n" + \
-                         "Click the link above for a list of some of the best settings \nand model combinations recorded by fellow UVR users.\nSpecial thanks to ZFTurbo for all his work on MVSep!",
+             description="一些我们的模型也在 MVSep 上。\n" + \
+                         "点击上面的链接查看一些由 UVR 用户记录的最佳设置 \n和模型组合。\n特别感谢 ZFTurbo 对 MVSep 的所有工作！",
              font=FONT_SIZE_1)
         
         Link(place=18, 
@@ -4331,7 +4331,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         return invalid_message_
         
     def pop_up_save_current_settings(self):
-        """Save current application settings as..."""
+        """保存当前应用设置为..."""
         
         settings_save = tk.Toplevel(root)
         
@@ -4369,7 +4369,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.menu_placement(settings_save, SAVE_CURRENT_SETTINGS_TEXT, pop_up=True)
 
     def pop_up_save_current_settings_sub_json_dump(self, settings_save_name: str):
-        """Dumps current application settings to a json named after user input"""
+        """将当前应用设置转储为以用户输入命名的 json"""
         
         if settings_save_name:
             self.save_current_settings_var.set(settings_save_name)
@@ -4381,7 +4381,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                 outfile.write(saved_data_dump)
 
     def pop_up_update_confirmation(self):
-        """Ask user is they want to update"""
+        """询问用户是否要更新"""
         
         is_new_update = self.online_data_refresh(confirmation_box=True)
         is_download_in_app_var = tk.BooleanVar(value=False)
@@ -4414,13 +4414,13 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             no_button.grid(row=3,column=0,padx=0,pady=MENU_PADDING_1)
             
             if is_windows:
-                download_outside_application_button = ttk.Checkbutton(update_confirmation_Frame, variable=is_download_in_app_var, text='Download Update in Application')
+                download_outside_application_button = ttk.Checkbutton(update_confirmation_Frame, variable=is_download_in_app_var, text='在应用内下载更新')
                 download_outside_application_button.grid(row=4,column=0,padx=0,pady=MENU_PADDING_1)
 
             self.menu_placement(update_confirmation_win, CONFIRM_UPDATE_TEXT, pop_up=True)
 
     def pop_up_user_code_input(self):
-        """Input VIP Code"""
+        """输入 VIP 代码"""
 
         self.user_code_validation_var.set('')
         
@@ -4469,7 +4469,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
 
     def pop_up_change_model_defaults(self, top_window):
         """
-        Change model defaults...
+        更改模型默认值...
         """
         
         def message_box_(text, is_success_message):
@@ -4482,16 +4482,16 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             if hash_file:
                 if os.path.isfile(hash_file):
                     os.remove(hash_file)
-                    message_box_("Defined Parameters Deleted", True)
+                    message_box_("已删除定义的参数", True)
                 else:
-                    message_box_("No Defined Parameters Found", False)
+                    message_box_("未找到定义的参数", False)
                     
                 self.update_checkbox_text()
                 
         def change_default():
             model_data = self.assemble_model_data(model=change_model_defaults_var.get(), arch_type=ENSEMBLE_CHECK, is_change_def=True)[0]
             if model_data.model_status:
-                message_box_("Model Parameters Changed", True)
+                message_box_("模型参数已更改", True)
                 self.update_checkbox_text()
 
         change_model_defaults = tk.Toplevel(root)
@@ -4527,7 +4527,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
 
     def pop_up_set_vocal_splitter(self, top_window):
         """
-        Set vocal splitter
+        设置声音分离器
         """
 
         try:
@@ -4569,7 +4569,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             set_vocal_splitter_title = self.menu_title_LABEL_SET(set_vocal_splitter_Frame, VOCAL_DEVERB_OPTIONS_TEXT)
             set_vocal_splitter_title.grid(pady=MENU_PADDING_2)
             
-            deverb_vocals_Label = self.menu_sub_LABEL_SET(set_vocal_splitter_Frame, 'Select Vocal Type to Deverb')
+            deverb_vocals_Label = self.menu_sub_LABEL_SET(set_vocal_splitter_Frame, '选择要去除混响的声音类型')
             deverb_vocals_Label.grid(pady=MENU_PADDING_1)
             deverb_vocals_Option = ComboBoxMenu(set_vocal_splitter_Frame, dropdown_name='setvocaldeverb', textvariable=self.deverb_vocal_opt_var, values=list(DEVERB_MAPPER.keys()), width=23)
             deverb_vocals_Option.grid(pady=7)
@@ -7263,4 +7263,5 @@ if __name__ == "__main__":
     root.deiconify()
     root.configure(bg=BG_COLOR)
     root.mainloop()
+
 
