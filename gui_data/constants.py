@@ -849,7 +849,7 @@ FILE_2 = 'file2'
 
 FILE_1_LB = 'file1_lb'
 FILE_2_LB = 'file1_2b'
-BATCH_MODE_DUAL = " : Batch Mode"
+BATCH_MODE_DUAL = " : 批处理模式"
 
 CODEC_DICT = {
     'PCM_U8':   {"sample_width": 1, "codec": None},        # 8-bit unsigned PCM
@@ -862,335 +862,329 @@ CODEC_DICT = {
 
 
 # Manual Downloads
-VR_PLACEMENT_TEXT = 'Place models in \"models/VR_Models\" directory.'
-MDX_PLACEMENT_TEXT = 'Place models in \"models/MDX_Net_Models\" directory.'
-DEMUCS_PLACEMENT_TEXT = 'Place models in \"models/Demucs_Models\" directory.'
-DEMUCS_V3_V4_PLACEMENT_TEXT = 'Place items in \"models/Demucs_Models/v3_v4_repo\" directory.'
-MDX_23_NAME = "MDX23C Model"
+VR_PLACEMENT_TEXT = '将模型放置在 "models/VR_Models" 目录中。'
+MDX_PLACEMENT_TEXT = '将模型放置在 "models/MDX_Net_Models" 目录中。'
+DEMUCS_PLACEMENT_TEXT = '将模型放置在 "models/Demucs_Models" 目录中。'
+DEMUCS_V3_V4_PLACEMENT_TEXT = '将项目放置在 "models/Demucs_Models/v3_v4_repo" 目录中。'
+MDX_23_NAME = "MDX23C 模型"
 
 # Liscense info
 if OPERATING_SYSTEM=="Darwin":
    is_macos = True
-   LICENSE_OS_SPECIFIC_TEXT = '• This application is intended for those running macOS Catalina and above.\n' +\
-                              '• Application functionality for systems running macOS Mojave or lower is not guaranteed.\n' +\
-                              '• Application functionality for older or budget Mac systems is not guaranteed.\n\n'
+   LICENSE_OS_SPECIFIC_TEXT = '• 此应用程序适用于运行 macOS Catalina 及更高版本的用户。\n' +\
+                              '• 不保证运行 macOS Mojave 或更低版本的系统的应用程序功能。\n' +\
+                              '• 不保证运行旧系统或预算 Mac 系统的应用程序功能。\n\n'
 elif OPERATING_SYSTEM=="Linux":
-   LICENSE_OS_SPECIFIC_TEXT = '• This application is intended for those running Linux Ubuntu 18.04+.\n' +\
-                              '• Application functionality for systems running other Linux platforms is not guaranteed.\n' +\
-                              '• Application functionality for older or budget systems is not guaranteed.\n\n'
+   LICENSE_OS_SPECIFIC_TEXT = '• 此应用程序适用于运行 Linux Ubuntu 18.04+ 的用户。\n' +\
+                              '• 不保证运行其他 Linux 平台的系统的应用程序功能。\n' +\
+                              '• 不保证运行旧系统或预算系统的应用程序功能。\n\n'
 elif OPERATING_SYSTEM=="Windows":
-   LICENSE_OS_SPECIFIC_TEXT = '• This application is intended for those running Windows 10 or higher.\n' +\
-                              '• Application functionality for systems running Windows 7 or lower is not guaranteed.\n' +\
-                              '• Application functionality for Intel Pentium & Celeron CPUs systems is not guaranteed.\n\n'
+   LICENSE_OS_SPECIFIC_TEXT = '• 此应用程序适用于运行 Windows 10 或更高版本的用户。\n' +\
+                              '• 不保证运行 Windows 7 或更低版本的系统的应用程序功能。\n' +\
+                              '• 不保证运行 Intel Pentium & Celeron CPUs 系统的应用程序功能。\n\n'
 
-LICENSE_TEXT = lambda a, p:f'Current Application Version: Ultimate Vocal Remover {a}\n' +\
-               f'Current Patch Version: {p}\n\n' +\
+LICENSE_TEXT = lambda a, p:f'当前应用程序版本: Ultimate Vocal Remover {a}\n' +\
+               f'当前补丁版本: {p}\n\n' +\
                'Copyright (c) 2022 Ultimate Vocal Remover\n\n' +\
-               'UVR is free and open-source, but MIT licensed. Please credit us if you use our\n' +\
-               f'models or code for projects unrelated to UVR.\n\n{LICENSE_OS_SPECIFIC_TEXT}' +\
-               'This bundle contains the UVR interface, Python, PyTorch, and other\n' +\
-               'dependencies needed to run the application effectively.\n\n' +\
-               'Website Links: This application, System or Service(s) may contain links to\n' +\
-               'other websites and downloads, and they are solely provided to you as an\n' +\
-               'additional convenience. You understand and acknowledge that by clicking\n' +\
-               'or activating such links you are accessing a site or service outside of\n' +\
-               'this application, and that we do not screen, review, approve, or otherwise\n' +\
-               'endorse any content or information contained in these linked websites.\n' +\
-               'You acknowledge and agree that we, our affiliates and partners are not\n' +\
-               'responsible for the contents of any of these linked websites, including\n' +\
-               'the accuracy or availability of information provided by the linked websites,\n' +\
-               'and we make no representations or warranties regarding your use of\n' +\
-               'the linked websites.\n\n' +\
-               'This application is MIT Licensed\n\n' +\
-               'Permission is hereby granted, free of charge, to any person obtaining a copy\n' +\
-               'of this software and associated documentation files (the "Software"), to deal\n' +\
-               'in the Software without restriction, including without limitation the rights\n' +\
-               'to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n' +\
-               'copies of the Software, and to permit persons to whom the Software is\n' +\
-               'furnished to do so, subject to the following conditions:\n\n' +\
-               'The above copyright notice and this permission notice shall be included in all\n' +\
-               'copies or substantial portions of the Software.\n\n' +\
-               'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n' +\
-               'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n' +\
-               'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n' +\
-               'AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n' +\
-               'LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n' +\
-               'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n' +\
-               'SOFTWARE.'
+               'UVR 是免费开源的，但 MIT 许可的。请在未与 UVR 相关的项目中使用我们的\n' +\
+               f'模型或代码时给予我们信用。\n\n{LICENSE_OS_SPECIFIC_TEXT}' +\
+               '此捆绑包包含运行应用程序所需的 UVR 界面、Python、PyTorch 和其他\n' +\
+               '依赖项。\n\n' +\
+               '网站链接: 此应用程序、系统或服务(s)可能包含链接到\n' +\
+               '其他网站和下载，并且仅为您提供了额外的便利。您理解并确认，通过单击\n' +\
+               '或激活这些链接，您正在访问此应用程序之外的站点或服务，并且我们不会筛选、审查、批准或以任何方式\n' +\
+               '认可这些链接网站中包含的任何内容或信息。\n' +\
+               '您确认并同意，我们、我们的附属公司和合作伙伴对这些链接网站中包含的任何内容，包括\n' +\
+               '这些链接网站提供的信息的准确性或可用性，以及我们对您使用\n' +\
+               '这些链接网站的任何行为不承担任何责任。\n\n' +\
+               '此应用程序是 MIT 许可的\n\n' +\
+               '特此免费授予任何获得本软件副本和\n' +\
+               '相关文档文件(以下简称 "软件")的人，无限制地处理该软件，包括但不限于权利\n' +\
+               '使用、复制、修改、合并、发布、分发、再许可和/或出售\n' +\
+               '软件的副本，并允许将软件提供给他人，前提是\n' +\
+               '以下条件：\n\n' +\
+               '上述版权声明和本许可声明应包含在所有\n' +\
+               '软件的副本或实质部分。\n\n' +\
+               '本软件"按原样"提供，不附带任何形式的保修，无论是明示的\n' +\
+               '还是暗示的，包括但不限于对适销性、特定用途适用性和\n' +\
+               '非侵权性的保证。根据任何理由，无论是合同诉讼、侵权行为或其他\n' +\
+               '责任行为，作者或版权持有人均不对任何人承担任何责任\n' +\
+               '因软件或软件的使用或其他处理而产生的任何索赔、损害或其他\n' +\
+               '责任，无论是根据、来自或与软件有关。'
 
 # Message Box Text
-INVALID_INPUT = 'Invalid Input', 'The input is invalid.\n\nPlease verify the input still exists or is valid and try again.'
-INVALID_EXPORT = 'Invalid Export Directory', 'You have selected an invalid export directory.\n\nPlease make sure the selected directory still exists.'
-INVALID_ENSEMBLE = 'Not Enough Models', 'You must select 2 or more models to run ensemble.'
-INVALID_MODEL = 'No Model Chosen', 'You must select an model to continue.'
-MISSING_MODEL = 'Model Missing', 'The selected model is missing or not valid.'
-ERROR_OCCURED = 'Error Occured', '\n\nWould you like to open the error log for more details?\n'
-PROCESS_COMPLETE = '\nProcess complete\n'
-PROCESS_COMPLETE_2 = 'Process complete\n'
+INVALID_INPUT = '无效输入', '输入无效。\n\n请验证输入是否仍然存在或有效，然后重试。'
+INVALID_EXPORT = '无效的导出目录', '您选择了无效的导出目录。\n\n请确保所选目录仍然存在。'
+INVALID_ENSEMBLE = '模型不足', '您必须选择 2 个或更多模型才能运行合奏。'
+INVALID_MODEL = '未选择模型', '您必须选择一个模型才能继续。'
+MISSING_MODEL = '模型缺失', '所选模型缺失或无效。'
+ERROR_OCCURED = '发生错误', '\n\n您是否想打开错误日志以获取更多详细信息?\n'
+PROCESS_COMPLETE = '\n处理完成\n'
+PROCESS_COMPLETE_2 = '处理完成\n'
 
 # GUI Text Constants
-BACK_TO_MAIN_MENU = 'Back to Main Menu'
+BACK_TO_MAIN_MENU = '返回主菜单'
 
 # Help Hint Text
-INTERNAL_MODEL_ATT = 'This is an internal model setting. \n\n***Avoid changing it unless you\'re certain about it!***'
-STOP_HELP = 'Stops ongoing tasks.\n• A confirmation pop-up will appear before stopping.'
-SETTINGS_HELP = 'Accesses the main settings and the "Download Center."'
-COMMAND_TEXT_HELP = 'Shows the status and progress of ongoing tasks.'
-SAVE_CURRENT_SETTINGS_HELP = 'Load or save the app\'s settings.'
-PITCH_SHIFT_HELP = ('Choose the pitch for processing tracks:\n\n'
-                '• Whole numbers indicate semitones.\n'
-                '• Using higher pitches may cut the upper bandwidth, even in high-quality models.\n'
-                '• Upping the pitch can be better for tracks with deeper vocals.\n'
-                '• Dropping the pitch may take more processing time but works well for tracks with high-pitched vocals.')
-AGGRESSION_SETTING_HELP = ('Adjust the intensity of primary stem extraction:\n\n'
-                           '• It ranges from -100 - 100.\n'
-                           '• Bigger values mean deeper extractions.\n' 
-                           '• Typically, it\'s set to 5 for vocals & instrumentals. \n' 
-                           '• Values beyond 5 might muddy the sound for non-vocal models.')
-WINDOW_SIZE_HELP = ('Select window size to balance quality and speed:\n\n'
-                    '• 1024 - Quick but lesser quality.\n'
-                    '• 512 - Medium speed and quality.\n'
-                    '• 320 - Takes longer but may offer better quality.')
-MDX_SEGMENT_SIZE_HELP = ('Pick a segment size to balance speed, resource use, and quality:\n'
-                         '• Smaller sizes consume less resources.\n'
-                         '• Bigger sizes consume more resources, but may provide better results.\n'
-                         '• Default size is 256. Quality can change based on your pick.')
-DEMUCS_STEMS_HELP = ('Select a stem for extraction with the chosen model:\n\n'
-                     '• All Stems - Extracts all available stems.\n'
-                     '• Vocals - Only the "vocals" stem.\n'
-                     '• Other - Only the "other" stem.\n'
-                     '• Bass - Only the "bass" stem.\n'
-                     '• Drums - Only the "drums" stem.')
-SEGMENT_HELP = ('Adjust segments to manage RAM or V-RAM usage:\n\n'
-               '• Smaller sizes consume less resources.\n'
-               '• Bigger sizes consume more resources, but may provide better results.\n'
-               '• "Default" picks the optimal size.')
+INTERNAL_MODEL_ATT = '这是一个内部模型设置。 \n\n***除非您确定，否则不要更改它!***'
+STOP_HELP = '停止正在进行的任务。\n• 停止前会出现确认弹出窗口。'
+SETTINGS_HELP = '访问主设置和 "下载中心"。'
+COMMAND_TEXT_HELP = '显示正在进行任务的状态和进度。'
+SAVE_CURRENT_SETTINGS_HELP = '加载或保存应用程序设置。'
+PITCH_SHIFT_HELP = ('选择处理曲目的音调：\n\n'
+                '• 整数表示半音。\n'
+                '• 使用更高的音调可能会在高质量模型中切断上带宽，即使是在高质量模型中。\n'
+                '• 提高音调可能更适合有深层女声的曲目。\n'
+                '• 降低音调可能需要更长的处理时间，但对于有高音女声的曲目效果更好。')
+AGGRESSION_SETTING_HELP = ('调整主干提取的强度：\n\n'
+                           '• 范围从 -100 - 100。\n'
+                           '• 数值越大，提取越深。\n' 
+                           '• 通常设置为 5 用于女声和乐器曲目。 \n'
+                           '• 超过 5 的值可能会使非女声模型的声音变得混乱。')
+WINDOW_SIZE_HELP = ('选择窗口大小以平衡质量和速度：\n\n'
+                    '• 1024 - 速度快但质量较差。\n'
+                    '• 512 - 中等速度和质量。\n'
+                    '• 320 - 需要更长时间，但可能提供更好的质量。')
+MDX_SEGMENT_SIZE_HELP = ('选择分段大小以平衡速度、资源使用和质量：\n'
+                         '• 较小的大小消耗较少的资源。\n'
+                         '• 较大的大小消耗更多的资源，但可能提供更好的结果。\n'
+                         '• 默认大小为 256。质量可能会因您的选择而变化。')
+DEMUCS_STEMS_HELP = ('选择要使用所选模型提取的茎：\n\n'
+                     '• 所有茎 - 提取所有可用的茎。\n'
+                     '• 女声 - 仅 "女声" 茎。\n'
+                     '• 其他 - 仅 "其他" 茎。\n'
+                     '• 低音 - 仅 "低音" 茎。\n'
+                     '• 鼓点 - 仅 "鼓点" 茎。')
+SEGMENT_HELP = ('调整分段以管理 RAM 或 V-RAM 使用：\n\n'
+               '• 较小的大小消耗较少的资源。\n'
+               '• 较大的大小消耗更多的资源，但可能提供更好的结果。\n'
+               '• "默认" 会选择最佳大小。')
 
 ENSEMBLE_MAIN_STEM_HELP = (
-    'Select the stem type for ensembling:\n\n'
+    '选择用于合奏的茎类型：\n\n'
     
     f'• {VOCAL_PAIR}:\n'
-    '  - Primary Stem: Vocals\n'
-    '  - Secondary Stem: Instrumental (mixture minus vocals)\n\n'
+    '  - 主茎: 女声\n'
+    '  - 次茎: 乐器 (混合减去女声)\n\n'
     
     f'• {OTHER_PAIR}:\n'
-    '  - Primary Stem: Other\n'
-    '  - Secondary Stem: No Other (mixture minus "other")\n\n'
+    '  - 主茎: 其他\n'
+    '  - 次茎: 无其他 (混合减去 "其他")\n\n'
     
     f'• {BASS_PAIR}:\n'
-    '  - Primary Stem: Bass\n'
-    '  - Secondary Stem: No Bass (mixture minus bass)\n\n'
+    '  - 主茎: 低音\n'
+    '  - 次茎: 无低音 (混合减去低音)\n\n'
     
     f'• {DRUM_PAIR}:\n'
-    '  - Primary Stem: Drums\n'
-    '  - Secondary Stem: No Drums (mixture minus drums)\n\n'
+    '  - 主茎: 鼓点\n'
+    '  - 次茎: 无鼓点 (混合减去鼓点)\n\n'
     
     f'• {FOUR_STEM_ENSEMBLE}:\n'
-    '  - Gathers all 4-stem Demucs models and ensembles all outputs.\n\n'
+    '  - 收集所有 4 茎 Demucs 模型并合奏所有输出。\n\n'
     
     f'• {MULTI_STEM_ENSEMBLE}:\n'
-    '  - The "Jungle Ensemble" gathers all models and ensembles any related outputs.'
+    '  - "丛林合奏" 收集所有模型并合奏任何相关输出。'
 )
 
 ENSEMBLE_TYPE_HELP = (
-    'Choose the ensemble algorithm for generating the final output:\n\n'
+    '选择用于生成最终输出的合奏算法：\n\n'
     
     f'• {MAX_MIN}:\n'
-    '  - Primary stem processed with "Max Spec" algorithm.\n'
-    '  - Secondary stem processed with "Min Spec" algorithm.\n\n'
+    '  - 主茎使用 "Max Spec" 算法处理。\n'
+    '  - 次茎使用 "Min Spec" 算法处理。\n\n'
     
-    'Note: For the "4 Stem Ensemble" option, only one algorithm will be displayed.\n\n'
+    '注意: 对于 "4 茎合奏" 选项，只会显示一个算法。\n\n'
     
-    'Algorithm Details:\n'
+    '算法详细信息：\n'
     
     f'• {MAX_SPEC}:\n'
-    '  - Produces the highest possible output.\n'
-    '  - Ideal for vocal stems for a fuller sound, but might introduce unwanted artifacts.\n'
-    '  - Works well with instrumental stems, but avoid using VR Arch models in the ensemble.\n\n'
+    '  - 产生最高可能的输出。\n'
+    '  - 适用于女声茎以获得更丰富的声音，但可能会引入不需要的伪影。\n'
+    '  - 适用于乐器茎，但避免在合奏中使用 VR Arch 模型。\n\n'
     
     f'• {MIN_SPEC}:\n'
-    '  - Produces the lowest possible output.\n'
-    '  - Ideal for instrumental stems for a cleaner result. Might result in a "muddy" sound.\n\n'
+    '  - 产生最低可能的输出。\n'
+    '  - 适用于乐器茎以获得更清晰的结果。可能会导致 "泥泞" 的声音。\n\n'
     
     f'• {AUDIO_AVERAGE}:\n'
-    '  - Averages all results together for the final output.'
+    '  - 平均所有结果以获得最终输出。'
 )
 
 ENSEMBLE_LISTBOX_HELP = (
-    'Displays all available models for the chosen main stem pair.'
+    '显示所选主茎对的所有可用模型。'
 )
 
 if OPERATING_SYSTEM == 'darwin':
    IS_GPU_CONVERSION_HELP = (
-      '• Use GPU for Processing (if available):\n'
-      '  - If checked, the application will attempt to use your GPU for faster processing.\n'
-      '  - If a GPU is not detected, it will default to CPU processing.\n'
-      '  - GPU processing for MacOS only works with VR Arch models.\n\n'
-      '• Please Note:\n'
-      '  - CPU processing is significantly slower than GPU processing.\n'
-      '  - Only Macs with M1 chips can be used for GPU processing.'
+      '• 使用 GPU 进行处理 (如果可用):\n'
+      '  - 如果选中，应用程序将尝试使用您的 GPU 进行更快的处理。\n'
+      '  - 如果未检测到 GPU，将默认使用 CPU 处理。\n'
+      '  - macOS 上的 GPU 处理仅适用于 VR Arch 模型。\n\n'
+      '• 请注意:\n'
+      '  - CPU 处理比 GPU 处理慢得多。\n'
+      '  - 只有配备 M1 芯片的 Mac 才能用于 GPU 处理。'
    )
 else:
    IS_GPU_CONVERSION_HELP = (
-      '• Use GPU for Processing (if available):\n'
-      '  - If checked, the application will attempt to use your GPU for faster processing.\n'
-      '  - If a GPU is not detected, it will default to CPU processing.\n\n'
-      '• Please Note:\n'
-      '  - CPU processing is significantly slower than GPU processing.\n'
-      '  - Only Nvidia GPUs can be used for GPU processing.'
+      '• 使用 GPU 进行处理 (如果可用):\n'
+      '  - 如果选中，应用程序将尝试使用您的 GPU 进行更快的处理。\n'
+      '  - 如果未检测到 GPU，将默认使用 CPU 处理。\n\n'
+      '• 请注意:\n'
+      '  - CPU 处理比 GPU 处理慢得多。\n'
+      '  - 只有 Nvidia GPU 才能用于 GPU 处理。'
    )
 
-IS_TIME_CORRECTION_HELP = ('When checked, the output will retain the original BPM of the input.')
-SAVE_STEM_ONLY_HELP = 'Allows the user to save only the selected stem.'
-IS_NORMALIZATION_HELP = 'Normalizes output to prevent clipping.'
-IS_CUDA_SELECT_HELP = "If you have more than one GPU, you can pick which one to use for processing."
-CROP_SIZE_HELP = '**Only compatible with select models only!**\n\n Setting should match training crop-size value. Leave as is if unsure.'
-IS_TTA_HELP = ('This option performs Test-Time-Augmentation to improve the separation quality.\n\n'
-               'Note: Having this selected will increase the time it takes to complete a conversion')
-IS_POST_PROCESS_HELP = ('This option can potentially identify leftover instrumental artifacts within the vocal outputs. \nThis option may improve the separation of some songs.\n\n' +\
-                       'Note: Selecting this option can adversely affect the conversion process, depending on the track. Because of this, it is only recommended as a last resort.')
-IS_HIGH_END_PROCESS_HELP = 'The application will mirror the missing frequency range of the output.'
-SHIFTS_HELP = ('Performs multiple predictions with random shifts of the input and averages them.\n\n'
-              '• The higher number of shifts, the longer the prediction will take. \n- Not recommended unless you have a GPU.')
-OVERLAP_HELP = ('• This option controls the amount of overlap between prediction windows.\n'
-               '       - Higher values can provide better results, but will lead to longer processing times.\n'
-               '       - You can choose between 0.001-0.999')
-MDX_OVERLAP_HELP = ('• This option controls the amount of overlap between prediction windows.\n'
-               '       - Higher values can provide better results, but will lead to longer processing times.\n'
-               '       - For Non-MDX23C models: You can choose between 0.001-0.999')
-OVERLAP_23_HELP = ('• This option controls the amount of overlap between prediction windows.\n'
-                  '       - Higher values can provide better results, but will lead to longer processing times.')
-IS_SEGMENT_DEFAULT_HELP = '• The segment size is set based on the value provided in a chosen model\'s associated \nconfig file (yaml).'
-IS_SPLIT_MODE_HELP = '• Enables \"Segments\". \n• Deselecting this option is only recommended for those with powerful PCs.'
-IS_DEMUCS_COMBINE_STEMS_HELP = 'The application will create the secondary stem by combining the remaining stems \ninstead of inverting the primary stem with the mixture.'
-COMPENSATE_HELP = 'Compensates the audio of the primary stems to allow for a better secondary stem.'
-IS_DENOISE_HELP = ('• Standard: This setting reduces the noise created by MDX-Net models.\n' 
-                   '       - This option only reduces noise in non-MDX23 models.\n' 
-                   '• Denoise Model: This setting employs a special denoise model to eliminate noise produced by any MDX-Net model.\n'
-                   '       - This option works on all MDX-Net models.\n'
-                   '       - You must have the "UVR-DeNoise-Lite" VR Arch model installed to use this option.\n'
-                   '• Please Note: Both options will increase separation time.')
+IS_TIME_CORRECTION_HELP = ('选中后，输出将保留输入的原始 BPM。')
+SAVE_STEM_ONLY_HELP = '允许用户仅保存所选的茎。'
+IS_NORMALIZATION_HELP = '归一化输出以防止裁剪。'
+IS_CUDA_SELECT_HELP = "如果您有多个 GPU，您可以选择哪个 GPU 用于处理。"
+CROP_SIZE_HELP = '**仅与选定模型兼容!**\n\n 设置应与训练裁剪大小值匹配。如果不确定，请保持默认。'
+IS_TTA_HELP = ('此选项执行测试时增强以提高分离质量。\n\n'
+               '注意: 选择此选项将增加完成转换所需的时间。')
+IS_POST_PROCESS_HELP = ('此选项可能会识别女声输出中剩余的乐器伪影。 \n此选项可能会改善某些歌曲的分离。\n\n' +\
+                       '注意: 选择此选项可能会对处理过程产生不利影响，具体取决于曲目。因此，仅在最后一步作为最后的手段推荐。')
+IS_HIGH_END_PROCESS_HELP = '应用程序将镜像输出的缺失频率范围。'
+SHIFTS_HELP = ('执行多次预测，随机移位输入并对它们进行平均。\n\n'
+              '• 移位次数越多，预测时间越长。 \n- 不建议除非您有 GPU。')
+OVERLAP_HELP = ('• 此选项控制预测窗口之间的重叠量。\n'
+               '       - 较高的值可以提供更好的结果，但会导致处理时间更长。\n'
+               '       - 您可以选择 0.001-0.999')
+MDX_OVERLAP_HELP = ('• 此选项控制预测窗口之间的重叠量。\n'
+               '       - 较高的值可以提供更好的结果，但会导致处理时间更长。\n'
+               '       - 对于非 MDX23C 模型: 您可以选择 0.001-0.999')
+OVERLAP_23_HELP = ('• 此选项控制预测窗口之间的重叠量。\n'
+                  '       - 较高的值可以提供更好的结果，但会导致处理时间更长。')
+IS_SEGMENT_DEFAULT_HELP = '• 分段大小是根据所选模型的相关 \nconfig 文件 (yaml) 中提供的值设置的。'
+IS_SPLIT_MODE_HELP = '• 启用 "分段"。 \n• 不建议取消选择此选项，除非您拥有强大的 PC。'
+IS_DEMUCS_COMBINE_STEMS_HELP = '应用程序将通过组合剩余的茎而不是反转主茎与混合来创建次茎。'
+COMPENSATE_HELP = '补偿主茎的音频以允许更好的次茎。'
+IS_DENOISE_HELP = ('• 标准: 此设置减少 MDX-Net 模型产生的噪声。\n' 
+                   '       - 此选项仅减少非 MDX23 模型的噪声。\n'
+                   '• 降噪模型: 此设置使用特殊降噪模型消除任何 MDX-Net 模型产生的噪声。\n'
+                   '       - 此选项适用于所有 MDX-Net 模型。\n'
+                   '       - 您必须安装 "UVR-DeNoise-Lite" VR Arch 模型才能使用此选项。\n'
+                   '• 请注意: 这两个选项都会增加分离时间。')
 
-VOC_SPLIT_MODEL_SELECT_HELP = '• Select a model from the list of lead and backing vocal models to run through vocal stems automatically.'
-IS_VOC_SPLIT_INST_SAVE_SELECT_HELP = '• When activated, you will receive extra instrumental outputs that include: one with just the lead vocals and another with only the backing vocals.'
-IS_VOC_SPLIT_MODEL_SELECT_HELP = ('• When activated, this option auto-processes generated vocal stems, using either a karaoke model to remove lead vocals or another to remove backing vocals.\n'
-                                 '       - This option splits the vocal track into two separate parts: lead vocals and backing vocals, providing two extra vocal outputs.\n'
-                                 '       - The results will be organized in the same way, whether you use a karaoke model or a background vocal model.\n'
-                                 '       - This option does not work in ensemble mode at this time.')
-IS_DEVERB_OPT_HELP = ('• Select the vocal type you wish to deverb automatically.\n'
-                     '       - Example: Choosing "Lead Vocals Only" will only remove reverb from a lead vocal stem.')
-IS_DEVERB_VOC_HELP = ('• This option removes reverb from a vocal stem.\n'
-                     '       - You must have the "UVR-DeEcho-DeReverb" VR Arch model installed to use this option.\n'
-                     '       - This option does not work in ensemble mode at this time.')
-IS_FREQUENCY_MATCH_HELP = 'Matches the frequency cut-off of the primary stem to that of the secondary stem.'
-CLEAR_CACHE_HELP = 'Clears settings for unrecognized models chosen by the user.'
-IS_SAVE_ALL_OUTPUTS_ENSEMBLE_HELP = 'If enabled, all individual ensemble-generated outputs are retained.'
-IS_APPEND_ENSEMBLE_NAME_HELP = 'When enabled, the ensemble name is added to the final output.'
+VOC_SPLIT_MODEL_SELECT_HELP = '• 从主唱和伴奏模型列表中选择一个模型，以自动处理女声茎。'
+IS_VOC_SPLIT_INST_SAVE_SELECT_HELP = '• 启用后，您将收到额外的仪器输出，其中包括: 仅有主唱的一个和仅有伴奏的另一个。'
+IS_VOC_SPLIT_MODEL_SELECT_HELP = ('• 启用后，此选项会自动处理生成的女声茎，使用卡拉 OK 模型去除主唱或使用另一个模型去除伴奏。\n'
+                                 '       - 此选项将女声轨道分为两个独立的部分: 主唱和伴奏，提供两个额外的女声输出。\n'
+                                 '       - 无论您使用卡拉 OK 模型还是背景女声模型，结果都会以相同的方式组织。\n'
+                                 '       - 此选项目前不适用于合奏模式。')
+IS_DEVERB_OPT_HELP = ('• 选择要自动去除混响的女声类型。\n'
+                     '       - 示例: 选择 "仅主要女声" 将仅从主要女声茎中去除混响。')
+IS_DEVERB_VOC_HELP = ('• 此选项从女声茎中去除混响。\n'
+                     '       - 您必须安装 "UVR-DeEcho-DeReverb" VR Arch 模型才能使用此选项。\n'
+                     '       - 此选项目前不适用于合奏模式。')
+IS_FREQUENCY_MATCH_HELP = '将主茎的频率截止与次茎的频率截止匹配。'
+CLEAR_CACHE_HELP = '清除用户选择的未识别模型的设置。'
+IS_SAVE_ALL_OUTPUTS_ENSEMBLE_HELP = '启用后，将保留所有合奏生成的单独输出。'
+IS_APPEND_ENSEMBLE_NAME_HELP = '启用后，将合奏名称添加到最终输出中。'
 IS_WAV_ENSEMBLE_HELP = (
-    'Processes ensemble algorithms with waveforms instead of spectrograms when activated:\n'
-    '• Might lead to increased distortion.\n'
-    '• Waveform ensembling is faster than spectrogram ensembling.'
+    '启用后，使用波形而不是频谱进行合奏算法处理:\n'
+    '• 可能会增加失真。\n'
+    '• 波形合奏比频谱合奏快。'
 )
-DONATE_HELP = 'Opens official UVR "Buy Me a Coffee" external link for project donations!'
+DONATE_HELP = '打开官方 UVR "Buy Me a Coffee" 外部链接以捐赠项目！'
 IS_INVERT_SPEC_HELP = (
-    'Potentially enhances the secondary stem quality:\n'
-    '• Inverts primary stem using spectrograms, instead of waveforms.\n'
-    '• Slightly slower inversion method.'
+    '可能增强次茎质量:\n'
+    '• 使用频谱而不是波形反转主茎。\n'
+    '• 稍微慢一些的反转方法。'
 )
-IS_TESTING_AUDIO_HELP = 'Appends a 10-digit number to saved files to avoid accidental overwrites.'
-IS_MODEL_TESTING_AUDIO_HELP = 'Appends the model name to outputs for comparison across different models.'
+IS_TESTING_AUDIO_HELP = '在保存的文件中附加 10 位数字以避免意外覆盖。'
+IS_MODEL_TESTING_AUDIO_HELP = '在输出中附加模型名称以便在不同模型之间进行比较。'
 IS_ACCEPT_ANY_INPUT_HELP = (
-    'Allows all types of inputs when enabled, even non-audio formats.\n'
-    'For experimental use only. Not recommended for regular use.'
+    '启用后，允许所有类型的输入，甚至非音频格式。\n'
+    '仅用于实验，不建议用于常规使用。'
 )
-IS_TASK_COMPLETE_HELP = 'Plays a chime upon process completion or failure when activated.'
+IS_TASK_COMPLETE_HELP = '启用后，处理完成或失败时会播放提示音。'
 DELETE_YOUR_SETTINGS_HELP = (
-    'Contains your saved settings. Confirmation will be requested before deleting a selected setting.'
+    '包含您保存的设置。删除所选设置前会请求确认。'
 )
-SET_STEM_NAME_HELP = 'Select the primary stem for the given model.'
-IS_CREATE_MODEL_FOLDER_HELP = ('Two new directories will be generated for the outputs in the export directory after each conversion.\n\n'
-                              '• Example: \n'
-                              '─ Export Directory\n'
-                              '   └── First Directory (Named after the model)\n'
-                              '           └── Second Directory (Named after the track)\n'
-                              '                    └── Output File(s)')
+SET_STEM_NAME_HELP = '选择给定模型的主茎。'
+IS_CREATE_MODEL_FOLDER_HELP = ('在每次转换后，在导出目录中生成两个新目录以保存输出。\n\n'
+                              '• 示例: \n'
+                              '─ 导出目录\n'
+                              '   └── 第一个目录 (以模型命名)\n'
+                              '           └── 第二个目录 (以曲目命名)\n'
+                              '                    └── 输出文件(s)')
 MDX_DIM_T_SET_HELP = INTERNAL_MODEL_ATT
 MDX_DIM_F_SET_HELP = INTERNAL_MODEL_ATT
 
-MDX_N_FFT_SCALE_SET_HELP = 'Specify the N_FFT size used during model training.'
+MDX_N_FFT_SCALE_SET_HELP = '指定模型训练期间使用的 N_FFT 大小。'
 POPUP_COMPENSATE_HELP = (
-    f'Select the appropriate volume compensation for the chosen model.\n'
-    f'Reminder: {COMPENSATE_HELP}'
+    f'选择所选模型的适当音量补偿。\n'
+    f'提醒: {COMPENSATE_HELP}'
 )
-VR_MODEL_PARAM_HELP = 'Select the required parameters to run the chosen model.'
+VR_MODEL_PARAM_HELP = '选择运行所选模型所需的参数。'
 CHOSEN_ENSEMBLE_HELP = (
-    'Default Ensemble Selections:\n'
-    '• Save the current ensemble configuration.\n'
-    '• Clear all selected models.\n'
-    'Note: You can also select previously saved ensembles.'
+    '默认合奏选择:\n'
+    '• 保存当前合奏配置。\n'
+    '• 清除所有选定模型。\n'
+    '注意: 您还可以选择先前保存的合奏。'
 )
 CHOSEN_PROCESS_METHOD_HELP = (
-    'Choose a Processing Method:\n'
-    'Select from various AI networks and algorithms to process your track:\n'
+    '选择处理方法:\n'
+    '选择各种 AI 网络和算法以处理您的曲目:\n'
     '\n'
-    '• VR Architecture: Uses magnitude spectrograms for source separation.\n'
-    '• MDX-Net: Employs a Hybrid Spectrogram network for source separation.\n'
-    '• Demucs v3: Also utilizes a Hybrid Spectrogram network for source separation.\n'
-    '• Ensemble Mode: Combine results from multiple models and networks for optimal results.\n'
-    '• Audio Tools: Additional utilities for added convenience.'
+    '• VR 架构: 使用幅度频谱图进行源分离。\n'
+    '• MDX-Net: 使用混合频谱图网络进行源分离。\n'
+    '• Demucs v3: 也使用混合频谱图网络进行源分离。\n'
+    '• 合奏模式: 结合多个模型和网络的结果以获得最佳结果。\n'
+    '• 音频工具: 额外的实用工具以便更方便。'
 )        
 
 INPUT_FOLDER_ENTRY_HELP = (
-    'Select Input:\n'
-    'Choose the audio file(s) you want to process.'
+    '选择输入:\n'
+    '选择要处理的音频文件(s)。'
 )
 INPUT_FOLDER_ENTRY_HELP_2 = (
-    'Input Option Menu:\n'
-    'Click to access the input option menu.'
+    '输入选项菜单:\n'
+    '单击以访问输入选项菜单。'
 )
 OUTPUT_FOLDER_ENTRY_HELP = (
-    'Select Output:\n'
-    'Choose the directory where the processed files will be saved.'
+    '选择输出:\n'
+    '选择保存处理文件的目录。'
 )
 INPUT_FOLDER_BUTTON_HELP = (
-    'Open Input Folder Button:\n'
-    'Open the directory containing the selected input audio file(s).'
+    '打开输入文件夹按钮:\n'
+    '打开包含所选输入音频文件(s)的目录。'
 )
 OUTPUT_FOLDER_BUTTON_HELP = (
-    'Open Output Folder Button:\n'
-    'Open the selected output folder.'
+    '打开输出文件夹按钮:\n'
+    '打开所选的输出文件夹。'
 )
 CHOOSE_MODEL_HELP = (
-    'Each processing method has its own set of options and models.\n'
-    'Choose the model associated with the selected processing method here.'
+    '每种处理方法都有自己的选项和模型。\n'
+    '在此处选择与所选处理方法关联的模型。'
 )
-FORMAT_SETTING_HELP = 'Save Outputs As: '
+FORMAT_SETTING_HELP = '保存输出为: '
 SECONDARY_MODEL_ACTIVATE_HELP = (
-    'When enabled, the application will perform an additional inference using the selected model(s) above.'
+    '启用后，应用程序将使用上面选择的模型(s)执行额外的推理。'
 )
 SECONDARY_MODEL_HELP = (
-    'Choose the Secondary Model:\n'
-    'Select the secondary model associated with the stem you want to process with the current method.'
+    '选择次要模型:\n'
+    '选择与要使用当前方法处理的茎关联的次要模型。'
 )
 
 INPUT_SEC_FIELDS_HELP = (
-    'Right click here to choose your inputs!'
+    '右键单击此处选择您的输入!'
 )
 
-SECONDARY_MODEL_SCALE_HELP = ('The scale determines how the final audio outputs will be averaged between the primary and secondary models.\n\nFor example:\n\n'
-                             '• 10% - 10 percent of the main model result will be factored into the final result.\n'
-                             '• 50% - The results from the main and secondary models will be averaged evenly.\n'
-                             '• 90% - 90 percent of the main model result will be factored into the final result.')
+SECONDARY_MODEL_SCALE_HELP = ('比例决定了最终音频输出将如何平均主模型和次模型的结果。\n\n例如:\n\n'
+                             '• 10% - 主模型结果的 10% 将被计入最终结果。\n'
+                             '• 50% - 主模型和次模型的结果将平均。\n'
+                             '• 90% - 主模型结果的 90% 将被计入最终结果。')
 PRE_PROC_MODEL_ACTIVATE_HELP = (
-    'When enabled, the application will use the selected model to isolate the instrumental stem.\n'
-    'Subsequently, all non-vocal stems will be extracted from this generated instrumental.\n'
+    '启用后，应用程序将使用所选模型隔离仪器茎。\n'
+    '随后，所有非女声茎将从此生成的仪器中提取出来。\n'
     '\n'
-    'Key Points:\n'
-    '• This feature can significantly reduce vocal bleed in non-vocal stems.\n'
-    '• Available exclusively in the Demucs tool.\n'
-    '• Compatible only with non-vocal and non-instrumental stem outputs.\n'
-    '• Expect an increase in total processing time.\n'
-    '• Only the VR or MDX-Net Vocal Instrumental/Vocals models can be chosen for this process.'
+    '关键点:\n'
+    '• 此功能可以显著减少非女声茎中的女声泄漏。\n'
+    '• 仅在 Demucs 工具中可用。\n'
+    '• 仅与非女声和非仪器茎输出兼容。\n'
+    '• 预计总处理时间将增加。\n'
+    '• 只能选择 VR 或 MDX-Net 女声乐器/女声模型进行此过程。'
 )
       
 AUDIO_TOOLS_HELP = (
