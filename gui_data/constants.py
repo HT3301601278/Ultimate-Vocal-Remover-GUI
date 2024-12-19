@@ -122,15 +122,15 @@ TH_EXT = '.th'
 JSON = '.json'
 
 #GUI Buttons
-START_PROCESSING = 'Start Processing'
-WAIT_PROCESSING = 'Please wait...'
-STOP_PROCESSING = 'Halting process, please wait...'
+START_PROCESSING = '开始处理'
+WAIT_PROCESSING = '请稍候...'
+STOP_PROCESSING = '正在停止处理，请稍候...'
 LOADING_MODELS = '正在加载模型...'
 
 #---Messages and Logs----
 
-MISSING_MODEL = 'missing'
-MODEL_PRESENT = 'present'
+MISSING_MODEL = '缺失'
+MODEL_PRESENT = '存在'
 
 # 音轨类型
 ALL_STEMS = '所有音轨'
@@ -842,22 +842,22 @@ WOOD_INST_PARAMS = {
     "primary_stem": NO_WIND_INST_STEM
                      }
 
-READ_ONLY = 'readonly'
+READ_ONLY = '只读'
 
-FILE_1 = 'file1'
-FILE_2 = 'file2'
+FILE_1 = '文件1'
+FILE_2 = '文件2'
 
-FILE_1_LB = 'file1_lb'
-FILE_2_LB = 'file1_2b'
+FILE_1_LB = '文件1_lb'
+FILE_2_LB = '文件1_2b'
 BATCH_MODE_DUAL = " : 批处理模式"
 
 CODEC_DICT = {
-    'PCM_U8':   {"sample_width": 1, "codec": None},        # 8-bit unsigned PCM
-    'PCM_16':   {"sample_width": 2, "codec": None},        # 16-bit signed PCM
-    'PCM_24':   {"sample_width": 3, "codec": None},        # 24-bit signed PCM
-    'PCM_32':   {"sample_width": 4, "codec": None},        # 32-bit signed PCM
-    'FLOAT32':  {"sample_width": None, "codec": "pcm_f32le"},  # 32-bit float
-    'FLOAT64':  {"sample_width": None, "codec": "pcm_f64le"}   # 64-bit float
+    'PCM_U8':   {"sample_width": 1, "codec": None},        # 8位无符号PCM
+    'PCM_16':   {"sample_width": 2, "codec": None},        # 16位有符号PCM
+    'PCM_24':   {"sample_width": 3, "codec": None},        # 24位有符号PCM
+    'PCM_32':   {"sample_width": 4, "codec": None},        # 32位有符号PCM
+    'FLOAT32':  {"sample_width": None, "codec": "pcm_f32le"},  # 32位浮点
+    'FLOAT64':  {"sample_width": None, "codec": "pcm_f64le"}   # 64位浮点
 }
 
 
