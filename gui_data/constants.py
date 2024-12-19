@@ -375,6 +375,7 @@ DEMUCS_SHIFTS = (0, 1, 2, 3, 4, 5,
                  6, 7, 8, 9, 10, 11, 
                  12, 13, 14, 15, 16, 17, 
                  18, 19, 20)
+
 SEMI_DEF = ['0']
 SEMITONE_SEL = (-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12)
 
@@ -387,149 +388,154 @@ MDX23_OVERLAP = range(2, 51)
 VR_AGGRESSION = range(0, 51)
 
 TIME_WINDOW_MAPPER = {
-            "None": None,
-            "1": [0.0625],
-            "2": [0.125],
-            "3": [0.25],
-            "4": [0.5],
-            "5": [0.75],
-            "6": [1],
-            "7": [2],
-            "Shifts: Low": [0.0625, 0.5],
-            "Shifts: Medium": [0.0625, 0.125, 0.5],
-            "Shifts: High": [0.0625, 0.125, 0.25, 0.5]
-            #"Shifts: Very High": [0.0625, 0.125, 0.25, 0.5, 0.75, 1],
+    "None": None,
+    "1": [0.0625],
+    "2": [0.125],
+    "3": [0.25],
+    "4": [0.5],
+    "5": [0.75],
+    "6": [1],
+    "7": [2],
+    "Shifts: Low": [0.0625, 0.5],
+    "Shifts: Medium": [0.0625, 0.125, 0.5],
+    "Shifts: High": [0.0625, 0.125, 0.25, 0.5]
 }
 
 INTRO_MAPPER = {
-            "Default": [10],
-            "1": [8],
-            "2": [6],
-            "3": [4],
-            "4": [2],
-            "Shifts: Low": [1, 10],
-            "Shifts: Medium": [1, 10, 8],
-            "Shifts: High": [1, 10, 8, 6, 4]
-            }
+    "Default": [10],
+    "1": [8],
+    "2": [6],
+    "3": [4],
+    "4": [2],
+    "Shifts: Low": [1, 10],
+    "Shifts: Medium": [1, 10, 8],
+    "Shifts: High": [1, 10, 8, 6, 4]
+}
 
 VOLUME_MAPPER = {
-            "None": (0, [0]),
-            "Low": (-4, range(0, 8)),
-            "Medium": (-6, range(0, 12)),
-            "High": (-6, [x * 0.5 for x in range(0, 25)]),
-            "Very High": (-10, [x * 0.5 for x in range(0, 41)])}
-            #"Max": (-10, [x * 0.3 for x in range(0, int(20 / 0.3) + 1)])}
+    "None": (0, [0]),
+    "Low": (-4, range(0, 8)),
+    "Medium": (-6, range(0, 12)),
+    "High": (-6, [x * 0.5 for x in range(0, 25)]),
+    "Very High": (-10, [x * 0.5 for x in range(0, 41)])
+}
 
 PHASE_MAPPER = {
-            "None": [0],
-            "Shifts Low": [0, 180],
-            "Shifts Medium": [0],
-            "Shifts High": [0],
-            "Shifts Very High": [0],}
+    "None": [0],
+    "Shifts Low": [0, 180],
+    "Shifts Medium": [0],
+    "Shifts High": [0],
+    "Shifts Very High": [0]
+}
 
-NONE_P = "None"
-VLOW_P = "Shifts: Very Low"
-LOW_P = "Shifts: Low"
-MED_P = "Shifts: Medium"
-HIGH_P = "Shifts: High"
-VHIGH_P = "Shifts: Very High"
-VMAX_P = "Shifts: Maximum"
+NONE_P = "无"
+VLOW_P = "移动: 极低"
+LOW_P = "移动: 低"
+MED_P = "移动: 中"
+HIGH_P = "移动: 高"
+VHIGH_P = "移动: 极高"
+VMAX_P = "移动: 最大"
 
 PHASE_SHIFTS_OPT = {
-                     NONE_P:190,
-                     VLOW_P:180,
-                     LOW_P:90,
-                     MED_P:45,
-                     HIGH_P:20,
-                     VHIGH_P:10,
-                     VMAX_P:1,}
+    NONE_P: 190,
+    VLOW_P: 180,
+    LOW_P: 90,
+    MED_P: 45,
+    HIGH_P: 20,
+    VHIGH_P: 10,
+    VMAX_P: 1
+}
 
 VR_WINDOW = ('320', '512','1024')
 VR_CROP = ('256', '512', '1024')
 POST_PROCESSES_THREASHOLD_VALUES = ('0.1', '0.2', '0.3')
 
-MDX_POP_PRO = ('MDX-NET_Noise_Profile_14_kHz', 'MDX-NET_Noise_Profile_17_kHz', 'MDX-NET_Noise_Profile_Full_Band')
-MDX_POP_STEMS = ('Vocals', 'Instrumental', 'Other', 'Drums', 'Bass')
+MDX_POP_PRO = ('MDX-NET_噪声配置_14_kHz', 'MDX-NET_噪声配置_17_kHz', 'MDX-NET_噪声配置_全频段')
+MDX_POP_STEMS = ('人声', '伴奏', '其他', '鼓点', '贝斯')
 MDX_POP_NFFT = ('4096', '5120', '6144', '7680', '8192', '16384')
 MDX_POP_DIMF = ('2048', '3072', '4096')
-DENOISE_NONE, DENOISE_S, DENOISE_M = 'None', 'Standard', 'Denoise Model'
+DENOISE_NONE, DENOISE_S, DENOISE_M = '无', '标准', '降噪模型'
 MDX_DENOISE_OPTION = [DENOISE_NONE, DENOISE_S, DENOISE_M]
 MDX_SEGMENTS = list(range(32, 4000+1, 32))
 
-SAVE_ENSEMBLE = 'Save Ensemble'
-CLEAR_ENSEMBLE = 'Clear Selection(s)'
+SAVE_ENSEMBLE = '保存合奏'
+CLEAR_ENSEMBLE = '清除选择'
 MENU_SEPARATOR = 35*'•'
-CHOOSE_ENSEMBLE_OPTION = 'Choose Option'
-ALL_TYPES = 'ALL'
-INVALID_ENTRY = 'Invalid Input, Please Try Again'
-ENSEMBLE_INPUT_RULE = '1. Only letters, numbers, spaces, and dashes allowed.\n2. No dashes or spaces at the start or end of input.'
-STEM_INPUT_RULE = '1. Only words with no spaces are allowed.\n2. No spaces, numbers, or special characters.'
+CHOOSE_ENSEMBLE_OPTION = '选择选项'
+ALL_TYPES = '全部'
+INVALID_ENTRY = '输入无效，请重试'
+ENSEMBLE_INPUT_RULE = '1. 仅允许字母、数字、空格和横线。\n2. 开头和结尾不能有横线或空格。'
+STEM_INPUT_RULE = '1. 仅允许无空格的单词。\n2. 不允许空格、数字或特殊字符。'
 
 ENSEMBLE_OPTIONS = [OPT_SEPARATOR_SAVE, SAVE_ENSEMBLE, CLEAR_ENSEMBLE]
-ENSEMBLE_CHECK = 'ensemble check'
-KARAOKEE_CHECK = 'kara check'
+ENSEMBLE_CHECK = '合奏检查'
+KARAOKEE_CHECK = '卡拉OK检查'
 
-AUTO_PHASE = "Automatic"
-POSITIVE_PHASE = "Positive Phase"
-NEGATIVE_PHASE = "Negative Phase"
-OFF_PHASE = "Native Phase"
+AUTO_PHASE = "自动"
+POSITIVE_PHASE = "正相位"
+NEGATIVE_PHASE = "负相位"
+OFF_PHASE = "原生相位"
 
 ALIGN_PHASE_OPTIONS = [AUTO_PHASE, POSITIVE_PHASE, NEGATIVE_PHASE, OFF_PHASE]
 
-SELECT_SAVED_ENSEMBLE = 'Select Saved Ensemble'
-SELECT_SAVED_SETTING = 'Select Saved Setting'
-ENSEMBLE_OPTION = "Ensemble Customization Options"
-MDX_OPTION = "Advanced MDX-Net Options"
-DEMUCS_OPTION = "Advanced Demucs Options"
-VR_OPTION = "Advanced VR Options"
-HELP_OPTION = "Open Information Guide"
-ERROR_OPTION = "Open Error Log"
-VERIFY_BEGIN = 'Verifying file '
-SAMPLE_BEGIN = 'Creating Sample '
-MODEL_MISSING_CHECK = 'Model Missing:'
+SELECT_SAVED_ENSEMBLE = '选择已保存的合奏'
+SELECT_SAVED_SETTING = '选择已保存的设置'
+ENSEMBLE_OPTION = "合奏自定义选项"
+MDX_OPTION = "MDX-Net高级选项"
+DEMUCS_OPTION = "Demucs高级选项"
+VR_OPTION = "VR高级选项"
+HELP_OPTION = "打开帮助指南"
+ERROR_OPTION = "打开错误日志"
+VERIFY_BEGIN = '正在验证文件 '
+SAMPLE_BEGIN = '正在创建样本 '
+MODEL_MISSING_CHECK = '模型缺失:'
 OPTION_LIST = [VR_OPTION, MDX_OPTION, DEMUCS_OPTION, ENSEMBLE_OPTION, ALIGNMENT_TOOL, HELP_OPTION, ERROR_OPTION]
 
 #Menu Strings
-VR_MENU ='VR Menu'
-DEMUCS_MENU ='Demucs Menu'
-MDX_MENU ='MDX-Net Menu'
-ENSEMBLE_MENU ='Ensemble Menu'
-HELP_MENU ='Help Menu'
-ERROR_MENU ='Error Log'
-INPUTS_MENU ='Inputs Menu'
-ALIGN_MENU ='Align Menu'
+VR_MENU ='VR菜单'
+DEMUCS_MENU ='Demucs菜单'
+MDX_MENU ='MDX-Net菜单'
+ENSEMBLE_MENU ='合奏菜单'
+HELP_MENU ='帮助菜单'
+ERROR_MENU ='错误日志'
+INPUTS_MENU ='输入菜单'
+ALIGN_MENU ='对齐菜单'
 
 # Audio Player
-PLAYING_SONG = ": Playing"
-PAUSE_SONG = ": Paused"
-STOP_SONG = ": Stopped"
+PLAYING_SONG = ": 播放中"
+PAUSE_SONG = ": 已暂停"
+STOP_SONG = ": 已停止"
 
-SELECTED_VER = 'Selected'
-DETECTED_VER = 'Detected'
+SELECTED_VER = '已选择'
+DETECTED_VER = '已检测'
 
-SAMPLE_MODE_CHECKBOX = lambda v:f'Sample Mode ({v}s)'
-REMOVED_FILES = lambda r, e:f'Audio Input Verification Report:\n\nRemoved Files:\n\n{r}\n\nError Details:\n\n{e}'
+SAMPLE_MODE_CHECKBOX = lambda v:f'样本模式 ({v}秒)'
+REMOVED_FILES = lambda r, e:f'音频输入验证报告:\n\n已移除文件:\n\n{r}\n\n错误详情:\n\n{e}'
 ADVANCED_SETTINGS = (ENSEMBLE_OPTION, MDX_OPTION, DEMUCS_OPTION, VR_OPTION, HELP_OPTION, ERROR_OPTION)
 
+# 音频格式
 WAV = 'WAV'
 FLAC = 'FLAC'
 MP3 = 'MP3'
 
+# 音频参数选项
 MP3_BIT_RATES = ('96k', '128k', '160k', '224k', '256k', '320k')
-WAV_TYPE = ('PCM_U8', 'PCM_16', 'PCM_24', 'PCM_32', '32-bit Float', '64-bit Float')
+WAV_TYPE = ('PCM_U8', 'PCM_16', 'PCM_24', 'PCM_32', '32位浮点', '64位浮点')
 GPU_DEVICE_NUM_OPTS = (DEFAULT, '0', '1', '2', '3', '4', '5', '6', '7', '8')
 
-SELECT_SAVED_SET = 'Choose Option'
-SAVE_SETTINGS = 'Save Current Settings'
-RESET_TO_DEFAULT = 'Reset to Default'
-RESET_FULL_TO_DEFAULT = 'Reset to Default'
-RESET_PM_TO_DEFAULT = 'Reset All Application Settings to Default'
+# 设置选项
+SELECT_SAVED_SET = '选择选项'
+SAVE_SETTINGS = '保存当前设置'
+RESET_TO_DEFAULT = '重置为默认'
+RESET_FULL_TO_DEFAULT = '重置为默认'
+RESET_PM_TO_DEFAULT = '重置所有应用设置为默认'
 
 SAVE_SET_OPTIONS = [OPT_SEPARATOR_SAVE, SAVE_SETTINGS, RESET_TO_DEFAULT]
 
+# 时间和音高
 TIME_PITCH = ('1.0', '2.0', '3.0', '4.0')
-TIME_TEXT = '_time_stretched'
-PITCH_TEXT = '_pitch_shifted'
+TIME_TEXT = '_时间拉伸'
+PITCH_TEXT = '_音高偏移'
 
 #RegEx Input Validation
 REG_PITCH = r'^[-+]?(1[0]|[0-9]([.][0-9]*)?)$'
@@ -553,136 +559,135 @@ REG_MDX_SEG = r'\b(?:' + '|'.join([str(num) for num in range(32, 1000001, 32)]) 
 REG_ALIGN = r'^[-+]?[0-9]\d*?$'
 REG_VOL_COMP = r'^\d+\.\d{1,9}$'
 
-# Sub Menu
-VR_ARCH_SETTING_LOAD = 'Load for VR Arch'
-MDX_SETTING_LOAD = 'Load for MDX-Net'
-DEMUCS_SETTING_LOAD = 'Load for Demucs'
-ALL_ARCH_SETTING_LOAD = 'Load for Full Application'
+# 子菜单
+VR_ARCH_SETTING_LOAD = '加载VR架构设置'
+MDX_SETTING_LOAD = '加载MDX-Net设置'
+DEMUCS_SETTING_LOAD = '加载Demucs设置'
+ALL_ARCH_SETTING_LOAD = '加载完整应用设置'
 
-# Mappers
-
+# 默认数据
 DEFAULT_DATA = {
-        'chosen_process_method': MDX_ARCH_TYPE,
-        'vr_model': CHOOSE_MODEL,
-        'aggression_setting': 5,
-        'window_size': 512,
-        'mdx_segment_size': 256,
-        'batch_size': DEF_OPT,
-        'crop_size': 256, 
-        'is_tta': False,
-        'is_output_image': False,
-        'is_post_process': False,
-        'is_high_end_process': False,
-        'post_process_threshold': 0.2,
-        'vr_voc_inst_secondary_model': NO_MODEL,
-        'vr_other_secondary_model': NO_MODEL,
-        'vr_bass_secondary_model': NO_MODEL,
-        'vr_drums_secondary_model': NO_MODEL,
-        'vr_is_secondary_model_activate': False,        
-        'vr_voc_inst_secondary_model_scale': 0.9,
-        'vr_other_secondary_model_scale': 0.7,
-        'vr_bass_secondary_model_scale': 0.5,
-        'vr_drums_secondary_model_scale': 0.5,
-        'demucs_model': CHOOSE_MODEL, 
-        'segment': DEMUCS_SEGMENTS[0],
-        'overlap': DEMUCS_OVERLAP[0],
-        'overlap_mdx': MDX_OVERLAP[0],
-        'overlap_mdx23': '8',
-        'shifts': 2,
-        'chunks_demucs': CHUNKS[0],
-        'margin_demucs': 44100,
-        'is_chunk_demucs': False,
-        'is_chunk_mdxnet': False,
-        'is_primary_stem_only_Demucs': False,
-        'is_secondary_stem_only_Demucs': False,
-        'is_split_mode': True,
-        'is_demucs_combine_stems': True,#
-        'is_mdx23_combine_stems': True,#
-        'demucs_voc_inst_secondary_model': NO_MODEL,
-        'demucs_other_secondary_model': NO_MODEL,
-        'demucs_bass_secondary_model': NO_MODEL,
-        'demucs_drums_secondary_model': NO_MODEL,
-        'demucs_is_secondary_model_activate': False,        
-        'demucs_voc_inst_secondary_model_scale': 0.9,
-        'demucs_other_secondary_model_scale': 0.7,
-        'demucs_bass_secondary_model_scale': 0.5,
-        'demucs_drums_secondary_model_scale': 0.5,
-        'demucs_stems': ALL_STEMS,
-        'demucs_pre_proc_model': NO_MODEL,
-        'is_demucs_pre_proc_model_activate': False,
-        'is_demucs_pre_proc_model_inst_mix': False,
-        'mdx_net_model': CHOOSE_MODEL,
-        'chunks': CHUNKS[0],
-        'margin': 44100,
-        'compensate': AUTO_SELECT,
-        'is_denoise': False,#
-        'denoise_option': 'None',#
-        'phase_option': AUTO_PHASE,
-        'phase_shifts': NONE_P,#
-        'is_save_align': False,#, 
-        'is_match_frequency_pitch': True,#
-        'is_match_silence': True,#
-        'is_spec_match': False,#
-        'is_mdx_c_seg_def': False,
-        'is_invert_spec': False, #
-        'is_deverb_vocals': False, #
-        'deverb_vocal_opt': 'Main Vocals Only', #
-        'voc_split_save_opt': 'Lead Only', #
-        'is_mixer_mode': False, 
-        'mdx_batch_size': DEF_OPT,
-        'mdx_voc_inst_secondary_model': NO_MODEL,
-        'mdx_other_secondary_model': NO_MODEL,
-        'mdx_bass_secondary_model': NO_MODEL,
-        'mdx_drums_secondary_model': NO_MODEL,
-        'mdx_is_secondary_model_activate': False,        
-        'mdx_voc_inst_secondary_model_scale': 0.9,
-        'mdx_other_secondary_model_scale': 0.7,
-        'mdx_bass_secondary_model_scale': 0.5,
-        'mdx_drums_secondary_model_scale': 0.5,
-        'mdx_stems': ALL_STEMS,
-        'is_save_all_outputs_ensemble': True,
-        'is_append_ensemble_name': False,
-        'chosen_audio_tool': AUDIO_TOOL_OPTIONS[0],
-        'choose_algorithm': MANUAL_ENSEMBLE_OPTIONS[0],
-        'time_stretch_rate': 2.0,
-        'pitch_rate': 2.0,
-        'is_time_correction': True,
-        'is_gpu_conversion': False,
-        'is_primary_stem_only': False,
-        'is_secondary_stem_only': False,
-        'is_testing_audio': False,#
-        'is_auto_update_model_params': True,#
-        'is_add_model_name': False,
-        'is_accept_any_input': False,
-        'is_task_complete': False,
-        'is_normalization': False,
-        'is_use_opencl': False,
-        'is_wav_ensemble': False,
-        'is_create_model_folder': False,
-        'mp3_bit_set': '320k',#
-        'semitone_shift': '0',#
-        'save_format': WAV,
-        'wav_type_set': 'PCM_16',
-        'device_set': DEFAULT,
-        'user_code': '',
-        'export_path': '',
-        'input_paths': [],
-        'lastDir': None,
-        'time_window': "3",
-        'intro_analysis': DEFAULT,
-        'db_analysis': "Medium",
-        'fileOneEntry': '',
-        'fileOneEntry_Full': '',
-        'fileTwoEntry': '',
-        'fileTwoEntry_Full': '',
-        'DualBatch_inputPaths': [],
-        'model_hash_table': {},
-        'help_hints_var': True,
-        'set_vocal_splitter': NO_MODEL,
-        'is_set_vocal_splitter': False,#
-        'is_save_inst_set_vocal_splitter': False,#
-        'model_sample_mode': False,
-        'model_sample_mode_duration': 30
+    'chosen_process_method': MDX_ARCH_TYPE,
+    'vr_model': CHOOSE_MODEL,
+    'aggression_setting': 5,
+    'window_size': 512,
+    'mdx_segment_size': 256,
+    'batch_size': DEF_OPT,
+    'crop_size': 256, 
+    'is_tta': False,
+    'is_output_image': False,
+    'is_post_process': False,
+    'is_high_end_process': False,
+    'post_process_threshold': 0.2,
+    'vr_voc_inst_secondary_model': NO_MODEL,
+    'vr_other_secondary_model': NO_MODEL,
+    'vr_bass_secondary_model': NO_MODEL,
+    'vr_drums_secondary_model': NO_MODEL,
+    'vr_is_secondary_model_activate': False,        
+    'vr_voc_inst_secondary_model_scale': 0.9,
+    'vr_other_secondary_model_scale': 0.7,
+    'vr_bass_secondary_model_scale': 0.5,
+    'vr_drums_secondary_model_scale': 0.5,
+    'demucs_model': CHOOSE_MODEL,
+    'segment': DEMUCS_SEGMENTS[0],
+    'overlap': DEMUCS_OVERLAP[0],
+    'overlap_mdx': MDX_OVERLAP[0],
+    'overlap_mdx23': '8',
+    'shifts': 2,
+    'chunks_demucs': CHUNKS[0],
+    'margin_demucs': 44100,
+    'is_chunk_demucs': False,
+    'is_chunk_mdxnet': False,
+    'is_primary_stem_only_Demucs': False,
+    'is_secondary_stem_only_Demucs': False,
+    'is_split_mode': True,
+    'is_demucs_combine_stems': True,
+    'is_mdx23_combine_stems': True,
+    'demucs_voc_inst_secondary_model': NO_MODEL,
+    'demucs_other_secondary_model': NO_MODEL,
+    'demucs_bass_secondary_model': NO_MODEL,
+    'demucs_drums_secondary_model': NO_MODEL,
+    'demucs_is_secondary_model_activate': False,
+    'demucs_voc_inst_secondary_model_scale': 0.9,
+    'demucs_other_secondary_model_scale': 0.7,
+    'demucs_bass_secondary_model_scale': 0.5,
+    'demucs_drums_secondary_model_scale': 0.5,
+    'demucs_stems': ALL_STEMS,
+    'demucs_pre_proc_model': NO_MODEL,
+    'is_demucs_pre_proc_model_activate': False,
+    'is_demucs_pre_proc_model_inst_mix': False,
+    'mdx_net_model': CHOOSE_MODEL,
+    'chunks': CHUNKS[0],
+    'margin': 44100,
+    'compensate': AUTO_SELECT,
+    'is_denoise': False,
+    'denoise_option': '无',
+    'phase_option': AUTO_PHASE,
+    'phase_shifts': NONE_P,
+    'is_save_align': False,
+    'is_match_frequency_pitch': True,
+    'is_match_silence': True,
+    'is_spec_match': False,
+    'is_mdx_c_seg_def': False,
+    'is_invert_spec': False,
+    'is_deverb_vocals': False,
+    'deverb_vocal_opt': '仅主要人声',
+    'voc_split_save_opt': '仅主唱',
+    'is_mixer_mode': False,
+    'mdx_batch_size': DEF_OPT,
+    'mdx_voc_inst_secondary_model': NO_MODEL,
+    'mdx_other_secondary_model': NO_MODEL,
+    'mdx_bass_secondary_model': NO_MODEL,
+    'mdx_drums_secondary_model': NO_MODEL,
+    'mdx_is_secondary_model_activate': False,
+    'mdx_voc_inst_secondary_model_scale': 0.9,
+    'mdx_other_secondary_model_scale': 0.7,
+    'mdx_bass_secondary_model_scale': 0.5,
+    'mdx_drums_secondary_model_scale': 0.5,
+    'mdx_stems': ALL_STEMS,
+    'is_save_all_outputs_ensemble': True,
+    'is_append_ensemble_name': False,
+    'chosen_audio_tool': AUDIO_TOOL_OPTIONS[0],
+    'choose_algorithm': MANUAL_ENSEMBLE_OPTIONS[0],
+    'time_stretch_rate': 2.0,
+    'pitch_rate': 2.0,
+    'is_time_correction': True,
+    'is_gpu_conversion': False,
+    'is_primary_stem_only': False,
+    'is_secondary_stem_only': False,
+    'is_testing_audio': False,
+    'is_auto_update_model_params': True,
+    'is_add_model_name': False,
+    'is_accept_any_input': False,
+    'is_task_complete': False,
+    'is_normalization': False,
+    'is_use_opencl': False,
+    'is_wav_ensemble': False,
+    'is_create_model_folder': False,
+    'mp3_bit_set': '320k',
+    'semitone_shift': '0',
+    'save_format': WAV,
+    'wav_type_set': 'PCM_16',
+    'device_set': DEFAULT,
+    'user_code': '',
+    'export_path': '',
+    'input_paths': [],
+    'lastDir': None,
+    'time_window': "3",
+    'intro_analysis': DEFAULT,
+    'db_analysis': "中等",
+    'fileOneEntry': '',
+    'fileOneEntry_Full': '',
+    'fileTwoEntry': '',
+    'fileTwoEntry_Full': '',
+    'DualBatch_inputPaths': [],
+    'model_hash_table': {},
+    'help_hints_var': True,
+    'set_vocal_splitter': NO_MODEL,
+    'is_set_vocal_splitter': False,
+    'is_save_inst_set_vocal_splitter': False,
+    'model_sample_mode': False,
+    'model_sample_mode_duration': 30
 }
 
 SETTING_CHECK = ('vr_model',
