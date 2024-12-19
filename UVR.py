@@ -2143,7 +2143,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         style.configure('TRadiobutton', foreground='#F6F6F7')
         gui_data.sv_ttk.set_theme("dark", MAIN_FONT_NAME, 10, fg_color_set=fg_color_set)
 
-    def show_file_dialog(self, text='Select Audio files', dialoge_type=None):
+    def show_file_dialog(self, text='选择音频文件', dialoge_type=None):
         parent_win = root
         is_linux = not is_windows and not is_macos
         
@@ -2168,7 +2168,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         elif dialoge_type == CHOOSE_EXPORT_FIR:
             filenames = filedialog.askdirectory(
                                     parent=parent_win,
-                                    title=f'Select Folder',)
+                                    title=f'选择文件夹',)
             
         if is_linux:
             print("Is Linux")
@@ -2213,7 +2213,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                 text = self.inputPaths[0]
             else:
                 count = len(self.inputPaths) - 1
-                file_text = 'file' if len(self.inputPaths) == 2 else 'files'
+                file_text = '文件' if len(self.inputPaths) == 2 else '文件'
                 text = f"{self.inputPaths[0]}, +{count} {file_text}"
         else:
             # Empty Selection
@@ -2222,7 +2222,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         self.inputPathsEntry_var.set(text)
 
     def select_audiofile(self, path=None, is_primary=True): 
-        """Make user select music files"""
+        """选择音频文件"""
             
         vars = {
             True: (self.fileOneEntry_Full_var, self.fileOneEntry_var, self.fileTwoEntry_Full_var, self.fileTwoEntry_var),
@@ -2232,7 +2232,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         file_path_var, file_basename_var, file_path_2_var, file_basename_2_var = vars[is_primary]
             
         if not path:
-            path = self.show_file_dialog(text='Select Audio file', dialoge_type=SINGLE_FILE)
+            path = self.show_file_dialog(text='选择音频文件', dialoge_type=SINGLE_FILE)
 
         if path:  # Path selected
             file_path_var.set(path)
@@ -2248,7 +2248,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
     #--Utility Methods--
 
     def restart(self):
-        """Restart the application after asking for confirmation"""
+        """重启应用程序"""
         
         confirm = messagebox.askyesno(parent=root,
                                          title=CONFIRM_RESTART_TEXT[0],
@@ -2258,7 +2258,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             self.save_values(app_close=True, is_restart=True)
         
     def delete_temps(self, is_start_up=False):  
-        """Deletes temp files"""
+        """删除临时文件"""
         
         DIRECTORIES = (BASE_PATH, VR_MODELS_DIR, MDX_MODELS_DIR, DEMUCS_MODELS_DIR, DEMUCS_NEWER_REPO_DIR)
         EXTENSIONS = (('.aes', '.txt', '.tmp'))
@@ -2280,7 +2280,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             self.error_log_var.set(error_text(TEMP_FILE_DELETION_TEXT, e))
         
     def get_files_from_dir(self, directory, ext, is_mdxnet=False):
-        """Gets files from specified directory that ends with specified extention"""
+        """从指定目录获取以指定扩展名结尾的文件"""
         
         return tuple(
             x if is_mdxnet and x.endswith(CKPT) else os.path.splitext(x)[0]
@@ -2289,7 +2289,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         )
         
     def return_ensemble_stems(self, is_primary=False): 
-        """Grabs and returns the chosen ensemble stems."""
+        """获取所选的集成轨道"""
         
         ensemble_stem = self.ensemble_main_stem_var.get().partition("/")
         
@@ -2299,7 +2299,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             return ensemble_stem[0], ensemble_stem[2]
 
     def message_box(self, message):
-        """Template for confirmation box"""
+        """确认框模板"""
         
         confirm = messagebox.askyesno(title=message[0],
                                          message=message[1],
@@ -2308,7 +2308,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         return confirm
 
     def error_dialoge(self, message):
-        """Template for messagebox that informs user of error"""
+        """错误信息框模板"""
 
         messagebox.showerror(master=self,
                                   title=message[0],
@@ -2355,7 +2355,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         def copy_help_hint(event):
             if self.help_hints_var.get():
                 right_click_menu = tk.Menu(self, font=(MAIN_FONT_NAME, FONT_SIZE_1), tearoff=0)
-                right_click_menu.add_command(label='Copy Help Hint Text', command=right_click_menu_copy_hint)
+                right_click_menu.add_command(label='复制帮助提示文本', command=right_click_menu_copy_hint)
                 
                 try:
                     right_click_menu.tk_popup(event.x_root,event.y_root)
@@ -2392,7 +2392,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
     def input_right_click_menu(self, event):
 
         right_click_menu = tk.Menu(self, font=(MAIN_FONT_NAME, FONT_SIZE_1), tearoff=0)
-        right_click_menu.add_command(label='See All Inputs', command=lambda:self.check_is_menu_open(INPUTS_MENU))
+        right_click_menu.add_command(label='查看所有输入', command=lambda:self.check_is_menu_open(INPUTS_MENU))
         
         try:
             right_click_menu.tk_popup(event.x_root,event.y_root)
@@ -2512,7 +2512,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         
         if track_length >= clip_duration:
             offset_cut = track_length//3
-            off_cut = offset_cut + track_length
+            off_cut = offset_cut + track_duration
             if not off_cut >= clip_duration:
                 offset_cut = 0
             name_apped = f'{clip_duration}_second_'
@@ -2544,22 +2544,22 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         
         def add_text_edit_options(menu):
             """Add options related to text editing."""
-            menu.add_command(label='Copy', command=self.right_click_menu_copy)
-            menu.add_command(label='Paste', command=lambda: self.right_click_menu_paste(text_box=text_box))
-            menu.add_command(label='Delete', command=lambda: self.right_click_menu_delete(text_box=text_box))
+            menu.add_command(label='复制', command=self.right_click_menu_copy)
+            menu.add_command(label='粘贴', command=lambda: self.right_click_menu_paste(text_box=text_box))
+            menu.add_command(label='删除', command=lambda: self.right_click_menu_delete(text_box=text_box))
         
         def add_advanced_settings_options(menu, settings_mapper, var_mapper):
             """Add advanced settings options to the menu."""
             current_method = self.chosen_process_method_var.get()
             
             if current_method in settings_mapper and (var_mapper[current_method] or (current_method == DEMUCS_ARCH_TYPE and self.is_demucs_pre_proc_model_activate_var.get())):
-                menu.add_cascade(label='Select Saved Settings', menu=saved_settings_sub_load_for_menu)
+                menu.add_cascade(label='选择保存的设置', menu=saved_settings_sub_load_for_menu)
                 menu.add_separator()
                 for method, option in settings_mapper.items():
                     if method != ENSEMBLE_MODE or current_method == ENSEMBLE_MODE:
-                        menu.add_command(label=f'Advanced {method} Settings', command=option)
+                        menu.add_command(label=f'高级 {method} 设置', command=option)
             elif current_method in settings_mapper:
-                menu.add_command(label=f'Advanced {current_method} Settings', command=settings_mapper[current_method])
+                menu.add_command(label=f'高级 {current_method} 设置', command=settings_mapper[current_method])
 
         # Create the right-click menu
         right_click_menu = tk.Menu(self, font=(MAIN_FONT_NAME, FONT_SIZE_1), tearoff=0)
@@ -2589,19 +2589,19 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             add_text_edit_options(right_click_menu)
         else:
             if self.chosen_process_method_var.get() == AUDIO_TOOLS and self.chosen_audio_tool_var.get() == ALIGN_INPUTS:
-                right_click_menu.add_command(label='Advanced Align Tool Settings', command=lambda: self.check_is_menu_open(ALIGNMENT_TOOL))
+                right_click_menu.add_command(label='高级对齐工具设置', command=lambda: self.check_is_menu_open(ALIGNMENT_TOOL))
             else:
                 add_advanced_settings_options(right_click_menu, settings_mapper, var_mapper)
 
             # Additional Settings and Help Hints
             if not self.is_menu_settings_open:
-                right_click_menu.add_command(label='Additional Settings', command=lambda: self.menu_settings(select_tab_2=True))
+                right_click_menu.add_command(label='附加设置', command=lambda: self.menu_settings(select_tab_2=True))
                 
-            help_hints_label = 'Enable' if not self.help_hints_var.get() else 'Disable'
-            right_click_menu.add_command(label=f'{help_hints_label} Help Hints', command=lambda: self.help_hints_var.set(not self.help_hints_var.get()))
+            help_hints_label = '启用' if not self.help_hints_var.get() else '禁用'
+            right_click_menu.add_command(label=f'{help_hints_label} 帮助提示', command=lambda: self.help_hints_var.set(not self.help_hints_var.get()))
                 
             if self.error_log_var.get():
-                right_click_menu.add_command(label='Error Log', command=lambda: self.check_is_menu_open(ERROR_OPTION))
+                right_click_menu.add_command(label='错误日志', command=lambda: self.check_is_menu_open(ERROR_OPTION))
 
         try:
             right_click_menu.tk_popup(event.x_root, event.y_root)
@@ -3073,9 +3073,9 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             
             right_click_menu = tk.Menu(self, font=(MAIN_FONT_NAME, FONT_SIZE_1), tearoff=0)
             if selected:
-                right_click_menu.add_command(label='Open Location', command=lambda:open_selected_path(lb))
-                right_click_menu.add_command(label='Open File', command=lambda:open_selected_path(lb, is_play_file=True))
-            right_click_menu.add_command(label='Clear All', command=lambda:clear_all_data(lb))
+                right_click_menu.add_command(label='打开位置', command=lambda:open_selected_path(lb))
+                right_click_menu.add_command(label='打开文件', command=lambda:open_selected_path(lb, is_play_file=True))
+            right_click_menu.add_command(label='清除所有', command=lambda:clear_all_data(lb))
 
             try:
                 right_click_menu.tk_popup(event.x_root,event.y_root)
@@ -3144,8 +3144,8 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                 file2_base_text = os.path.basename(first_paths[1])
             else:
                 first_paths_len = first_paths_len - 1
-                file1_base_text = f"{os.path.basename(first_paths[0])}, +{first_paths_len} file(s){BATCH_MODE_DUAL}"
-                file2_base_text = f"{os.path.basename(first_paths[1])}, +{first_paths_len} file(s){BATCH_MODE_DUAL}"
+                file1_base_text = f"{os.path.basename(first_paths[0])}, +{first_paths_len} 文件{BATCH_MODE_DUAL}"
+                file2_base_text = f"{os.path.basename(first_paths[1])}, +{first_paths_len} 文件{BATCH_MODE_DUAL}"
             
             self.fileOneEntry_var.set(file1_base_text)
             self.fileOneEntry_Full_var.set(f"{first_paths[0]}")
@@ -3193,7 +3193,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         option_menu.update_dropdown_size(option_list, menu_name)
 
     def menu_settings(self, select_tab_2=False, select_tab_3=False):#**
-        """Open Settings and Download Center"""
+        """打开设置和下载中心"""
 
         settings_menu = tk.Toplevel()
         
@@ -3799,7 +3799,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         ensemble_close_Button.grid(pady=MENU_PADDING_1)
         
         self.menu_placement(advanced_align_opt, ADVANCED_ALIGN_TOOL_OPTIONS_TEXT, is_help_hints=True, close_function=self.menu_advanced_align_options_close_window)
- 
+         
     def menu_help(self):#**
         """Open Help Guide"""
         
@@ -7263,3 +7263,4 @@ if __name__ == "__main__":
     root.deiconify()
     root.configure(bg=BG_COLOR)
     root.mainloop()
+
