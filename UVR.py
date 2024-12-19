@@ -4924,13 +4924,13 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         is_new_vr_model_Option = ttk.Checkbutton(vr_param_Frame, text=VR_51_MODEL_TEXT, width=SET_MENUS_CHECK_WIDTH, variable=is_new_vr_model_var, command=vr_new_toggle) 
         is_new_vr_model_Option.grid(pady=MENU_PADDING_1)
         
-        vr_model_nout_Label = self.menu_sub_LABEL_SET(vr_param_Frame, 'Out Channels')
+        vr_model_nout_Label = self.menu_sub_LABEL_SET(vr_param_Frame, '输出通道')
         vr_model_nout_Label.grid(pady=MENU_PADDING_1)
         vr_model_nout_Option = ComboBoxEditableMenu(vr_param_Frame, values=NOUT_SEL, textvariable=vr_model_nout_var, pattern=REG_SHIFTS, default='32', width=COMBO_WIDTH)
         vr_model_nout_Option.grid(pady=MENU_PADDING_1)
         #self.help_hints(vr_model_nout_Label, text=VR_MODEL_NOUT_HELP)
-
-        vr_model_nout_lstm_Label = self.menu_sub_LABEL_SET(vr_param_Frame, 'Out Channels (LSTM layer)')
+        
+        vr_model_nout_lstm_Label = self.menu_sub_LABEL_SET(vr_param_Frame, '输出通道 (LSTM 层)')
         vr_model_nout_lstm_Label.grid(pady=MENU_PADDING_1)
         vr_model_nout_lstm_Option = ComboBoxEditableMenu(vr_param_Frame, values=NOUT_LSTM_SEL, textvariable=vr_model_nout_lstm_var, pattern=REG_SHIFTS, default='128', width=COMBO_WIDTH)#
         vr_model_nout_lstm_Option.grid(pady=MENU_PADDING_1)
