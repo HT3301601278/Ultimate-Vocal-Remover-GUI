@@ -2641,8 +2641,8 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
     
     def right_click_console(self, event):
         right_click_menu = tk.Menu(self, font=(MAIN_FONT_NAME, FONT_SIZE_1), tearoff=0)
-        right_click_menu.add_command(label='Copy', command=self.command_Text.copy_text)
-        right_click_menu.add_command(label='Select All', command=self.command_Text.select_all_text)
+        right_click_menu.add_command(label='复制', command=self.command_Text.copy_text)
+        right_click_menu.add_command(label='全选', command=self.command_Text.select_all_text)
         
         try:
             right_click_menu.tk_popup(event.x_root,event.y_root)
@@ -2695,12 +2695,12 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             self.toplevels.append(window)
         
         def right_click_menu(event):
-            help_hints_label = 'Enable' if self.help_hints_var.get() == False else 'Disable'
+            help_hints_label = '启用' if self.help_hints_var.get() == False else '禁用'
             help_hints_bool = True if self.help_hints_var.get() == False else False
             right_click_menu = tk.Menu(self, font=(MAIN_FONT_NAME, FONT_SIZE_1), tearoff=0)
             if is_help_hints:
-                right_click_menu.add_command(label=f'{help_hints_label} Help Hints', command=lambda:self.help_hints_var.set(help_hints_bool))
-            right_click_menu.add_command(label='Exit Window', command=close_function)
+                right_click_menu.add_command(label=f'{help_hints_label} 帮助提示', command=lambda:self.help_hints_var.set(help_hints_bool))
+            right_click_menu.add_command(label='退出窗口', command=close_function)
             
             try:
                 right_click_menu.tk_popup(event.x_root,event.y_root)
@@ -4001,7 +4001,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         application_change_log_tab_Frame = tk.Frame(tab4)
         application_change_log_tab_Frame.grid(row=0,column=0,padx=0,pady=0)
 
-        application_change_log_Label = tk.Label(application_change_log_tab_Frame, text='Additional Information', font=(MAIN_FONT_NAME, f"{FONT_SIZE_6}", "bold"), justify="center", fg="#f4f4f4")
+        application_change_log_Label = tk.Label(application_change_log_tab_Frame, text='附加信息', font=(MAIN_FONT_NAME, f"{FONT_SIZE_6}", "bold"), justify="center", fg="#f4f4f4")
         application_change_log_Label.grid(row=0,column=0,padx=0,pady=25)
         
         application_change_log_Text = tk.Text(application_change_log_tab_Frame, font=(MAIN_FONT_NAME, f"{FONT_SIZE_4}"), fg="white", bg="black", width=72, wrap=tk.WORD, borderwidth=0)
