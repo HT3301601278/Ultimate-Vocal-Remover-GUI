@@ -1,0 +1,30 @@
+# Build and distribution directories
+build/
+dist/
+*.spec
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE settings
+.idea/
+.vscode/
+*.swp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Local configuration
+*.ini
+*.cfg
