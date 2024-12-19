@@ -216,7 +216,7 @@ DEMUCS_6_SOURCE_LIST = [BASS_STEM, DRUM_STEM, OTHER_STEM, VOCAL_STEM, GUITAR_STE
 
 DEMUCS_UVR_MODEL = 'UVR_Model'
 
-CHOOSE_STEM_PAIR = 'Choose Stem Pair'
+CHOOSE_STEM_PAIR = '选择音轨对'
 
 STEM_SET_MENU = (VOCAL_STEM, 
                  INST_STEM, 
@@ -244,8 +244,8 @@ STEM_SET_MENU_2 = (
                  WOODWINDS_STEM, 
                  BRASS_STEM, 
                  WIND_INST_STEM,
-                 "Noise",
-                 "Reverb")
+                 "噪音",
+                 "混响")
 
 STEM_PAIR_MAPPER = {
             VOCAL_STEM: INST_STEM,
@@ -279,7 +279,7 @@ STEM_PAIR_MAPPER_FULL = {
             NO_WIND_INST_STEM: WIND_INST_STEM,
             PRIMARY_STEM: SECONDARY_STEM}
 
-NO_STEM = "No "
+NO_STEM = "无 "
 
 NON_ACCOM_STEMS = (
             VOCAL_STEM,
@@ -308,14 +308,14 @@ INST_PAIR = f'{INST_STEM}/{VOCAL_STEM}'
 OTHER_PAIR = f'{OTHER_STEM}/{NO_OTHER_STEM}'
 DRUM_PAIR = f'{DRUM_STEM}/{NO_DRUM_STEM}'
 BASS_PAIR = f'{BASS_STEM}/{NO_BASS_STEM}'
-FOUR_STEM_ENSEMBLE = '4 Stem Ensemble'
-MULTI_STEM_ENSEMBLE = 'Multi-stem Ensemble'
+FOUR_STEM_ENSEMBLE = '四音轨合奏'
+MULTI_STEM_ENSEMBLE = '多音轨合奏'
 
 ENSEMBLE_MAIN_STEM = (CHOOSE_STEM_PAIR, VOCAL_PAIR, OTHER_PAIR, DRUM_PAIR, BASS_PAIR, FOUR_STEM_ENSEMBLE, MULTI_STEM_ENSEMBLE)
 
-MIN_SPEC = 'Min Spec'
-MAX_SPEC = 'Max Spec'
-AUDIO_AVERAGE = 'Average'
+MIN_SPEC = '最小频谱'
+MAX_SPEC = '最大频谱'
+AUDIO_AVERAGE = '平均值'
 
 MAX_MIN = f'{MAX_SPEC}/{MIN_SPEC}'
 MAX_MAX = f'{MAX_SPEC}/{MAX_SPEC}'
@@ -330,32 +330,32 @@ AVE_AVE = f'{AUDIO_AVERAGE}/{AUDIO_AVERAGE}'
 ENSEMBLE_TYPE = (MAX_MIN, MAX_MAX, MAX_AVE, MIN_MAX, MIN_MIX, MIN_AVE, AVE_MAX, AVE_MIN, AVE_AVE)
 ENSEMBLE_TYPE_4_STEM = (MAX_SPEC, MIN_SPEC, AUDIO_AVERAGE)
 
-BATCH_MODE = 'Batch Mode'
-BETA_VERSION = 'BETA'
-DEF_OPT = 'Default'
-USER_INPUT = "User Input"
+BATCH_MODE = '批处理模式'
+BETA_VERSION = '测试版'
+DEF_OPT = '默认'
+USER_INPUT = "用户输入"
 OPT_SEPARATOR = '─'*65
 
 CHUNKS = (AUTO_SELECT, '1', '5', '10', '15', '20', 
           '25', '30', '35', '40', '45', '50', 
           '55', '60', '65', '70', '75', '80', 
-          '85', '90', '95', 'Full')
+          '85', '90', '95', '完整')
 
 BATCH_SIZE = (DEF_OPT, '2', '3', '4', '5', 
-          '6', '7', '8', '9', '10')
+              '6', '7', '8', '9', '10')
 
 VOL_COMPENSATION = (AUTO_SELECT, '1.035', '1.08')
 
 MARGIN_SIZE = ('44100', '22050', '11025')
 
-AUDIO_TOOLS = 'Audio Tools'
+AUDIO_TOOLS = '音频工具'
 
-MANUAL_ENSEMBLE = 'Manual Ensemble'
-TIME_STRETCH = 'Time Stretch'
-CHANGE_PITCH = 'Change Pitch'
-ALIGN_INPUTS = 'Align Inputs'
-MATCH_INPUTS = 'Matchering'
-COMBINE_INPUTS = 'Combine Inputs'
+MANUAL_ENSEMBLE = '手动合奏'
+TIME_STRETCH = '时间拉伸'
+CHANGE_PITCH = '音调变更'
+ALIGN_INPUTS = '输入对齐'
+MATCH_INPUTS = '音频匹配'
+COMBINE_INPUTS = '输入合并'
 
 if OPERATING_SYSTEM == 'Windows' or OPERATING_SYSTEM == 'Darwin':  
    AUDIO_TOOL_OPTIONS = (MANUAL_ENSEMBLE, TIME_STRETCH, CHANGE_PITCH, ALIGN_INPUTS, MATCH_INPUTS)
