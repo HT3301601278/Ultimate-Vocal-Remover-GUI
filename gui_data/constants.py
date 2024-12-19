@@ -132,50 +132,61 @@ LOADING_MODELS = 'Loading models...'
 MISSING_MODEL = 'missing'
 MODEL_PRESENT = 'present'
 
-ALL_STEMS = 'All Stems'
-VOCAL_STEM = 'Vocals'
-INST_STEM = 'Instrumental'
-OTHER_STEM = 'Other'
-BASS_STEM = 'Bass'
-DRUM_STEM = 'Drums'
-GUITAR_STEM = 'Guitar'
-PIANO_STEM = 'Piano'
-SYNTH_STEM = 'Synthesizer'
-STRINGS_STEM = 'Strings'
-WOODWINDS_STEM = 'Woodwinds'
-BRASS_STEM = 'Brass'
-WIND_INST_STEM = 'Wind Inst'
-NO_OTHER_STEM = 'No Other'
-NO_BASS_STEM = 'No Bass'
-NO_DRUM_STEM = 'No Drums'
-NO_GUITAR_STEM = 'No Guitar'
-NO_PIANO_STEM = 'No Piano'
-NO_SYNTH_STEM = 'No Synthesizer'
-NO_STRINGS_STEM = 'No Strings'
-NO_WOODWINDS_STEM = 'No Woodwinds'
-NO_WIND_INST_STEM = 'No Wind Inst'
-NO_BRASS_STEM = 'No Brass'
-PRIMARY_STEM = 'Primary Stem'
-SECONDARY_STEM = 'Secondary Stem'
-LEAD_VOCAL_STEM = 'lead_only'
-BV_VOCAL_STEM = 'backing_only'
-LEAD_VOCAL_STEM_I = 'with_lead_vocals'
-BV_VOCAL_STEM_I = 'with_backing_vocals'
-LEAD_VOCAL_STEM_LABEL = 'Lead Vocals'
-BV_VOCAL_STEM_LABEL = 'Backing Vocals'
+# 音轨类型
+ALL_STEMS = '所有音轨'
+VOCAL_STEM = '人声'
+INST_STEM = '伴奏'
+OTHER_STEM = '其他'
+BASS_STEM = '贝斯'
+DRUM_STEM = '鼓点'
+GUITAR_STEM = '吉他'
+PIANO_STEM = '钢琴'
+SYNTH_STEM = '合成器'
+STRINGS_STEM = '弦乐'
+WOODWINDS_STEM = '木管乐器'
+BRASS_STEM = '铜管乐器'
+WIND_INST_STEM = '管乐器'
 
-VOCAL_STEM_ONLY = f'{VOCAL_STEM} Only'
-INST_STEM_ONLY = f'{INST_STEM} Only'
-PRIMARY_STEM_ONLY = f'{PRIMARY_STEM} Only'
+# 无某音轨标记
+NO_OTHER_STEM = '无其他'
+NO_BASS_STEM = '无贝斯'
+NO_DRUM_STEM = '无鼓点'
+NO_GUITAR_STEM = '无吉他'
+NO_PIANO_STEM = '无钢琴'
+NO_SYNTH_STEM = '无合成器'
+NO_STRINGS_STEM = '无弦乐'
+NO_WOODWINDS_STEM = '无木管'
+NO_WIND_INST_STEM = '无管乐'
+NO_BRASS_STEM = '无铜管'
 
-IS_SAVE_INST_ONLY = f'save_only_inst'
-IS_SAVE_VOC_ONLY = f'save_only_voc'
+# 主次音轨
+PRIMARY_STEM = '主要音轨'
+SECONDARY_STEM = '次要音轨'
+LEAD_VOCAL_STEM = '主唱人声'
+BV_VOCAL_STEM = '和声'
+LEAD_VOCAL_STEM_I = '包含主唱'
+BV_VOCAL_STEM_I = '包含和声'
+LEAD_VOCAL_STEM_LABEL = '主唱人声'
+BV_VOCAL_STEM_LABEL = '和声'
 
-DEVERB_MAPPER = {'Main Vocals Only':VOCAL_STEM, 
-                 'Lead Vocals Only':LEAD_VOCAL_STEM_LABEL, 
-                 'Backing Vocals Only':BV_VOCAL_STEM_LABEL, 
-                 'All Vocal Types':'ALL'}
+# 音轨组合标记
+VOCAL_STEM_ONLY = f'{VOCAL_STEM}独立'
+INST_STEM_ONLY = f'{INST_STEM}独立'
+PRIMARY_STEM_ONLY = f'{PRIMARY_STEM}独立'
 
+# 保存选项
+IS_SAVE_INST_ONLY = '仅保存伴奏'
+IS_SAVE_VOC_ONLY = '仅保存人声'
+
+# 去混响映射
+DEVERB_MAPPER = {
+    '仅主要人声':VOCAL_STEM, 
+    '仅主唱人声':LEAD_VOCAL_STEM_LABEL, 
+    '仅和声':BV_VOCAL_STEM_LABEL, 
+    '所有人声类型':'ALL'
+}
+
+# 平衡值
 BALANCE_VALUES = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
 #Other Constants
