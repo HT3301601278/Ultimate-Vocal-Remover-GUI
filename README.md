@@ -1,109 +1,109 @@
-# Ultimate Vocal Remover GUI v5.6
+# Ultimate Vocal Remover GUI v5.6 (终极人声移除工具 GUI v5.6)
 <img src="https://raw.githubusercontent.com/Anjok07/ultimatevocalremovergui/master/gui_data/img/UVR_v5.6.png?raw=true" />
 
-[![Release](https://img.shields.io/github/release/anjok07/ultimatevocalremovergui.svg)](https://github.com/anjok07/ultimatevocalremovergui/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/anjok07/ultimatevocalremovergui/total.svg)](https://github.com/anjok07/ultimatevocalremovergui/releases)
+[![发布版本](https://img.shields.io/github/release/anjok07/ultimatevocalremovergui.svg)](https://github.com/anjok07/ultimatevocalremovergui/releases/latest)
+[![下载量](https://img.shields.io/github/downloads/anjok07/ultimatevocalremovergui/total.svg)](https://github.com/anjok07/ultimatevocalremovergui/releases)
 
-## About
+## 关于
 
-This application uses state-of-the-art source separation models to remove vocals from audio files. UVR's core developers trained all of the models provided in this package (except for the Demucs v3 and v4 4-stem models).
+本应用使用最先进的音源分离模型从音频文件中移除人声。UVR 的核心开发者训练了此软件包中提供的所有模型(除了 Demucs v3 和 v4 4-stem 模型)。
 
-- **Core Developers**
+- **核心开发者**
     - [Anjok07](https://github.com/anjok07)
     - [aufr33](https://github.com/aufr33)
 
-- **Support the Project**
-    - [Donate](https://www.buymeacoffee.com/uvr5)
+- **支持项目**
+    - [捐赠](https://www.buymeacoffee.com/uvr5)
 
-## Installation
+## 安装说明
 
-These bundles contain the UVR interface, Python, PyTorch, and other dependencies needed to run the application effectively. No prerequisites are required.
+这些安装包包含了 UVR 界面、Python、PyTorch 和其他运行应用程序所需的依赖项。无需其他前置条件。
 
-### Windows Installation
+### Windows 安装
 
-- Please Note:
-    - This installer is intended for those running Windows 10 or higher. 
-    - Application functionality for systems running Windows 7 or lower is not guaranteed.
-    - Application functionality for Intel Pentium & Celeron CPUs systems is not guaranteed.
-    - You must install UVR to the main C:\ drive. Installing UVR to a secondary drive will cause instability.
+- 请注意:
+    - 此安装程序适用于 Windows 10 或更高版本。
+    - 不保证在 Windows 7 或更低版本系统上的功能。
+    - 不保证在 Intel Pentium 和 Celeron CPU 系统上的功能。
+    - 必须将 UVR 安装到 C:\ 主驱动器。安装到其他驱动器会导致不稳定。
 
-- Download the UVR installer for Windows via the link below:
-    - [Main Download Link](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/UVR_v5.6.0_setup.exe)
-    - [Main Download Link mirror](https://www.mediafire.com/file_premium/jiatpgp0ljou52p/UVR_v5.6.0_setup.exe/file)
-- If you use an **AMD Radeon or Intel Arc graphics card**, you can try the OpenCL version:
-    - [OpenCL Version - Main Download Link](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/UVR_v5.6.0_setup_opencl.exe)
-- Update Package instructions for those who have UVR already installed:
-    - If you already have UVR installed you can install this package over it or download it straight from the application or [click here for the patch](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/UVR_Patch_10_6_23_4_27.exe).
+- 通过以下链接下载 Windows 版 UVR 安装程序:
+    - [主下载链接](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/UVR_v5.6.0_setup.exe)
+    - [主下载链接镜像](https://www.mediafire.com/file_premium/jiatpgp0ljou52p/UVR_v5.6.0_setup.exe/file)
+- 如果您使用 **AMD Radeon 或 Intel Arc 显卡**，可以尝试 OpenCL 版本:
+    - [OpenCL 版本 - 主下载链接](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/UVR_v5.6.0_setup_opencl.exe)
+- 已安装 UVR 用户的更新包说明:
+    - 如果您已安装 UVR，可以直接覆盖安装此包，或从应用程序内直接下载，或[点击此处下载补丁](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/UVR_Patch_10_6_23_4_27.exe)。
 
 <details id="WindowsManual">
-  <summary>Windows Manual Installation</summary>
+  <summary>Windows 手动安装说明</summary>
 
-### Manual Windows Installation
+### Windows 手动安装
 
-- Download and extract the repository [here](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip)
-- Download and install Python [here](https://www.python.org/ftp/python/3.9.8/python-3.9.8-amd64.exe)
-   - Make sure to check "Add python.exe to PATH" during the install
-- Run the following commands from the extracted repo directory:
+- 在[这里](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip)下载并解压仓库
+- 在[这里](https://www.python.org/ftp/python/3.9.8/python-3.9.8-amd64.exe)下载并安装 Python
+   - 安装时请确保勾选"添加 python.exe 到 PATH"
+- 在解压的仓库目录中运行以下命令:
 
 ```
 python.exe -m pip install -r requirements.txt
 ```
 
-If you have a compatible Nvidia GPU, run the following command:
+如果您有兼容的 Nvidia GPU，请运行以下命令:
 
 ```
 python.exe -m pip install --upgrade torch --extra-index-url https://download.pytorch.org/whl/cu117
 ```
 
-If you do not have FFmpeg or Rubber Band installed and want to avoid going through the process of installing them the long way, follow the instructions below.
+如果您没有安装 FFmpeg 或 Rubber Band，且想避免繁琐的安装过程，请按照以下说明操作。
 
-**FFmpeg Installation**
+**FFmpeg 安装**
 
-- Download the precompiled build [here](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip)
-- From the archive, extract the following file to the UVR application directory:
+- 在[这里](https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip)下载预编译版本
+- 从压缩包中，将以下文件解压到 UVR 应用程序目录:
    - ```ffmpeg-5.1.2-essentials_build/bin/ffmpeg.exe```
 
-**Rubber Band Installation**
+**Rubber Band 安装**
 
-In order to use the Time Stretch or Change Pitch tool, you'll need Rubber Band.
+要使用时间拉伸或音高变更工具，您需要安装 Rubber Band。
 
-- Download the precompiled build [here](https://breakfastquay.com/files/releases/rubberband-3.1.2-gpl-executable-windows.zip)
-- From the archive, extract the following files to the UVR application directory:
+- 在[这里](https://breakfastquay.com/files/releases/rubberband-3.1.2-gpl-executable-windows.zip)下载预编译版本
+- 从压缩包中，将以下文件解压到 UVR 应用程序目录:
    - ```rubberband-3.1.2-gpl-executable-windows/rubberband.exe```
    - ```rubberband-3.1.2-gpl-executable-windows/sndfile.dll```
 
 </details>
 
-### MacOS Installation
-- Please Note:
-    - The MacOS Sonoma mouse clicking issue has been fixed.
-    - MPS (GPU) acceleration for Mac M1 has been expanded to work with Demucs v4 and all MDX-Net models.
-    - This bundle is intended for those running macOS Big Sur and above.
-    - Application functionality for systems running macOS Catalina or lower is not guaranteed.
-    - Application functionality for older or budget Mac systems is not guaranteed.
-    - Once everything is installed, the application may take up to 5-10 minutes to start for the first time (depending on your Macbook).
+### MacOS 安装
+- 请注意:
+    - MacOS Sonoma 鼠标点击问题已修复。
+    - Mac M1 的 MPS (GPU) 加速已扩展到支持 Demucs v4 和所有 MDX-Net 模型。
+    - 此软件包适用于 macOS Big Sur 及以上版本。
+    - 不保证在 macOS Catalina 或更低版本系统上的功能。
+    - 不保证在较旧或入门级 Mac 系统上的功能。
+    - 安装完成后，首次启动应用程序可能需要 5-10 分钟(取决于您的 Macbook)。
 
-- Download the UVR dmg for MacOS via one of the links below:
-    - Mac M1 (arm64) users:
-       - [Main Download Link](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/Ultimate_Vocal_Remover_v5_6_MacOS_arm64.dmg)
-       - [Main Download Link mirror](https://www.mediafire.com/file_premium/u3rk54wsqadpy93/Ultimate_Vocal_Remover_v5_6_MacOS_arm64.dmg/file)
+- 通过以下链接下载 MacOS 版 UVR:
+    - Mac M1 (arm64) 用户:
+       - [主下载链接](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/Ultimate_Vocal_Remover_v5_6_MacOS_arm64.dmg)
+       - [主下载链接镜像](https://www.mediafire.com/file_premium/u3rk54wsqadpy93/Ultimate_Vocal_Remover_v5_6_MacOS_arm64.dmg/file)
 
-    - Mac Intel (x86_64) users:
-       - [Main Download Link](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/Ultimate_Vocal_Remover_v5_6_MacOS_x86_64.dmg)
-       - [Main Download Link mirror](https://www.mediafire.com/file_premium/2gf1werx5ly5ylz/Ultimate_Vocal_Remover_v5_6_MacOS_x86_64.dmg/file)
+    - Mac Intel (x86_64) 用户:
+       - [主下载链接](https://github.com/Anjok07/ultimatevocalremovergui/releases/download/v5.6/Ultimate_Vocal_Remover_v5_6_MacOS_x86_64.dmg)
+       - [主下载链接镜像](https://www.mediafire.com/file_premium/2gf1werx5ly5ylz/Ultimate_Vocal_Remover_v5_6_MacOS_x86_64.dmg/file)
 
 <details id="CannotOpen">
-  <summary>MacOS Users: Having Trouble Opening UVR?</summary>
+  <summary>MacOS 用户：无法打开 UVR？</summary>
 
-> Due to Apples strict application security, you may need to follow these steps to open UVR.
+> 由于 Apple 严格的应用程序安全性，您可能需要按照以下步骤操作才能打开 UVR。
 >
-> First, run the following command via Terminal.app to allow applications to run from all sources (it's recommended that you re-enable this once UVR opens properly.)
+> 首先，通过 Terminal.app 运行以下命令以允许从所有来源运行应用程序(建议在 UVR 正常打开后重新启用此限制)
 > 
 > ```bash
 > sudo spctl --master-disable
 > ```
 > 
-> Second, run the following command to bypass Notarization: 
+> 其次，运行以下命令以绕过公证: 
 > 
 > ```bash
 > sudo xattr -rd com.apple.quarantine /Applications/Ultimate\ Vocal\ Remover.app
@@ -112,68 +112,67 @@ In order to use the Time Stretch or Change Pitch tool, you'll need Rubber Band.
 </details>
 
 <details id="MacInstall">
-  <summary>Manual MacOS Installation</summary>
+  <summary>MacOS 手动安装说明</summary>
 
-### Manual MacOS Installation
+### MacOS 手动安装
 
-- Download and save this repository [here](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip)
-- Download and install Python 3.10 [here](https://www.python.org/ftp/python/3.10.9/python-3.10.9-macos11.pkg)
-- From the saved directory run the following - 
+- 在[这里](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip)下载并保存此仓库
+- 在[这里](https://www.python.org/ftp/python/3.10.9/python-3.10.9-macos11.pkg)下载并安装 Python 3.10
+- 在保存的目录中运行以下命令 - 
 
 ```
 pip3 install -r requirements.txt
 ```
 
-- If your Mac is running with an M1, please run the following command next. If not, skip this step. - 
+- 如果您使用的是 M1 Mac，请接着运行以下命令。如果不是，请跳过此步骤。 - 
 
 ```
 cp /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/_soundfile_data/libsndfile_arm64.dylib /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/_soundfile_data/libsndfile.dylib
 ```
 
-**FFmpeg Installation**
+**FFmpeg 安装**
 
-- Once everything is done installing, download the correct FFmpeg binary for your system [here](http://www.osxexperts.net) and place it into the main application directory.
+- 安装完成后，在[这里](http://www.osxexperts.net)下载适合您系统的 FFmpeg 二进制文件，并将其放入主应用程序目录。
 
-**Rubber Band Installation**
+**Rubber Band 安装**
 
-In order to use the Time Stretch or Change Pitch tool, you'll need Rubber Band.
+要使用时间拉伸或音高变更工具，您需要安装 Rubber Band。
 
-- Download the precompiled build [here](https://breakfastquay.com/files/releases/rubberband-3.1.2-gpl-executable-windows.zip)
-- From the archive, extract the following files to the UVR/lib_v5 application directory:
+- 在[这里](https://breakfastquay.com/files/releases/rubberband-3.1.2-gpl-executable-windows.zip)下载预编译版本
+- 从压缩包中，将以下文件解压到 UVR/lib_v5 应用程序目录:
    - ```rubberband-3.1.2-gpl-executable-macos/rubberband```
 
-This process has been tested on a MacBook Pro 2021 (using M1) and a MacBook Air 2017 and is confirmed to be working on both.
+此过程已在 MacBook Pro 2021 (使用 M1) 和 MacBook Air 2017 上测试，并确认可用。
 
 </details>
 
-
-### Linux Installation (Updated Instructions)
+### Linux 安装（更新说明）
 
 <details id="LinuxInstall">
-  <summary>See Linux Installation Instructions</summary>
+  <summary>查看 Linux 安装说明</summary>
 
 <br />
 
-**These installation instructions are for Debian & Arch-based Linux systems.**
+**这些安装说明适用于基于 Debian 和 Arch 的 Linux 系统。**
 
 ---
 
-#### **Step 1: Download the Repository**
-- Download and save this repository from [GitHub](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip).
-- Extract the downloaded file to a directory of your choice.
+#### **步骤 1: 下载仓库**
+- 从 [GitHub](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip) 下载并保存此仓库。
+- 将下载的文件解压到您选择的目录。
 
 ---
 
-#### **Step 2: Install Dependencies**
-Use the following commands based on your system type:
+#### **步骤 2: 安装依赖**
+根据您的系统类型使用以下命令：
 
-**For Debian-based systems (Ubuntu, Mint, etc.):**
+**对于基于 Debian 的系统 (Ubuntu, Mint 等)：**
 ```bash
 sudo apt update && sudo apt upgrade
 sudo apt-get install -y ffmpeg python3-pip python3-tk
 ```
 
-**For Arch-based systems (EndeavourOS):**
+**对于基于 Arch 的系统 (EndeavourOS)：**
 ```bash
 sudo pacman -Syu
 sudo pacman -S ffmpeg python-pip tk
@@ -181,112 +180,112 @@ sudo pacman -S ffmpeg python-pip tk
 
 ---
 
-#### **Step 3: Set Up a Virtual Environment (Recommended)**
-Setting up a virtual environment (venv) ensures that the program's dependencies do not interfere with system-wide Python packages.
+#### **步骤 3: 设置虚拟环境（推荐）**
+设置虚拟环境(venv)可确保程序的依赖项不会与系统范围的 Python 包发生冲突。
 
-1. **Navigate to the extracted repository directory:**
+1. **导航到解压的仓库目录：**
    ```bash
    cd /path/to/ultimatevocalremovergui
    ```
 
-2. **Create a virtual environment:**
+2. **创建虚拟环境：**
    ```bash
    python3 -m venv venv
    ```
 
-3. **Activate the virtual environment:**
-   - For **Debian-based and Arch-based systems:**
+3. **激活虚拟环境：**
+   - 对于 **基于 Debian 和 Arch 的系统：**
      ```bash
      source venv/bin/activate
      ```
 
-4. **Install dependencies in the virtual environment:**
+4. **在虚拟环境中安装依赖：**
    ```bash
    pip install -r requirements.txt
    ```
 
 ---
 
-#### **Step 4: Run the Application**
-While the virtual environment is activated, start the application:
+#### **步骤 4: 运行应用程序**
+在虚拟环境激活的情况下，启动应用程序：
 ```bash
 python UVR.py
 ```
 
 ---
 
-#### **Important Notes**
-1. **Avoid Modifying System Files:**  
-   Previous instructions suggested deleting the `/usr/lib/python3.11/EXTERNALLY-MANAGED` file, which is dangerous and can break Python package management. Do **NOT** delete this file.
+#### **重要说明**
+1. **避免修改系统文件：**  
+   之前的说明建议删除 `/usr/lib/python3.11/EXTERNALLY-MANAGED` 文件，这是危险的，可能会破坏 Python 包管理。请**不要**删除此文件。
 
-2. **Why Use Virtual Environments?**  
-   Virtual environments isolate the program's dependencies, preventing conflicts with system Python packages. More information is available [here](https://stackoverflow.com/questions/75602063/pip-install-r-requirements-txt-is-failing-this-environment-is-externally-mana/75696359#75696359).
+2. **为什么使用虚拟环境？**  
+   虚拟环境可以隔离程序的依赖项，防止与系统 Python 包发生冲突。更多信息请参见[这里](https://stackoverflow.com/questions/75602063/pip-install-r-requirements-txt-is-failing-this-environment-is-externally-mana/75696359#75696359)。
 
-3. **Known Issues and Discussions:**  
-   - [Issue #1578](https://github.com/Anjok07/ultimatevocalremovergui/issues/1578)  
-   - [Pull Request #1068](https://github.com/Anjok07/ultimatevocalremovergui/pull/1068)
+3. **已知问题和讨论：**  
+   - [问题 #1578](https://github.com/Anjok07/ultimatevocalremovergui/issues/1578)  
+   - [拉取请求 #1068](https://github.com/Anjok07/ultimatevocalremovergui/pull/1068)
 
 ---
 
-If you encounter issues, refer to the [GitHub Issues](https://github.com/Anjok07/ultimatevocalremovergui/issues) page for help. 
+如果遇到问题，请参考 [GitHub Issues](https://github.com/Anjok07/ultimatevocalremovergui/issues) 页面寻求帮助。
 
 </details>
 
-### Other Application Notes
-- Nvidia GTX 1060 6GB is the minimum requirement for GPU conversions.
-- Nvidia GPUs with at least 8GBs of V-RAM are recommended.
-- AMD Radeon GPU supported is limited at this time.
-   - There is currently a working branch for AMD GPU users [here](https://github.com/Anjok07/ultimatevocalremovergui/tree/v5.6-amd-gpu)
-- This application is only compatible with 64-bit platforms. 
-- This application relies on the Rubber Band library for the Time-Stretch and Pitch-Shift options.
-- This application relies on FFmpeg to process non-wav audio files.
-- The application will automatically remember your settings when closed.
-- Conversion times will significantly depend on your hardware. 
-- These models are computationally intensive. 
+### 其他应用说明
+- Nvidia GTX 1060 6GB 是 GPU 转换的最低要求。
+- Nvidia GPUs 至少需要 8GBs 的 V-RAM。
+- AMD Radeon GPU 支持有限。
+   - 目前有一个针对 AMD GPU 用户的分支工作正在进行中，请参见[这里](https://github.com/Anjok07/ultimatevocalremovergui/tree/v5.6-amd-gpu)
+- 此应用程序仅兼容 64 位平台。
+- 此应用程序依赖于 Rubber Band 库来处理时间拉伸和音高变化选项。
+- 此应用程序依赖于 FFmpeg 来处理非 wav 音频文件。
+- 应用程序将自动记住您的设置，当关闭应用程序时。
+- 转换时间将显著依赖于您的硬件。
+- 这些模型是计算密集型的。
 
-### Performance:
-- Model load times are faster.
-- Importing/exporting audio files is faster.
+### 性能：
+- 模型加载时间更快。
+- 导入/导出音频文件更快。
 
-## Troubleshooting
+## 故障排除
 
-### Common Issues
+### 常见问题
 
-- If FFmpeg is not installed, the application will throw an error if the user attempts to convert a non-WAV file.
-- Memory allocation errors can usually be resolved by lowering the "Segment" or "Window" sizes.
+- 如果 FFmpeg 未安装，应用程序将在用户尝试转换非 WAV 文件时抛出错误。
+- 内存分配错误通常可以通过降低 "Segment" 或 "Window" 大小来解决。
 
-#### MacOS Sonoma Left-click Bug
-There's a known issue on MacOS Sonoma where left-clicks aren't registering correctly within the app. This was impacting all applications built with Tkinter on Sonoma and has since been resolved. Please download the latest version via the following link if you are still experiencing issues - [link](https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6)
+#### MacOS Sonoma 左键点击问题
+在 MacOS Sonoma 上存在一个已知问题，即应用程序内的左键点击无法正常工作。这个问题影响了所有在 Sonoma 上使用 Tkinter 构建的应用程序，现已解决。如果您仍然遇到问题，请通过以下链接下载最新版本 - [链接](https://github.com/Anjok07/ultimatevocalremovergui/releases/tag/v5.6)
 
-This issue was being tracked [here](https://github.com/Anjok07/ultimatevocalremovergui/issues/840).
+此问题的跟踪记录在[这里](https://github.com/Anjok07/ultimatevocalremovergui/issues/840)。
 
-### Issue Reporting
+### 问题报告
 
-Please be as detailed as possible when posting a new issue. 
+在提交新问题时，请尽可能详细地描述。
 
-If possible, click the "Settings Button" to the left of the "Start Processing" button and click the "Error Log" button for detailed error information that can be provided to us.
+如果可能，请点击"开始处理"按钮左侧的"设置按钮"，然后点击"错误日志"按钮，获取可以提供给我们的详细错误信息。
 
-## License
+## 许可证
 
-The **Ultimate Vocal Remover GUI** code is [MIT-licensed](LICENSE). 
+**Ultimate Vocal Remover GUI** 代码采用 [MIT 许可证](LICENSE)。
 
-- **Please Note:** For all third-party application developers who wish to use our models, please honor the MIT license by providing credit to UVR and its developers.
+- **请注意：** 对于所有希望使用我们模型的第三方应用程序开发者，请遵守 MIT 许可证，为 UVR 及其开发者提供适当的信用。
 
-## Credits
-- [ZFTurbo](https://github.com/ZFTurbo) - Created & trained the weights for the new MDX23C models. 
-- [DilanBoskan](https://github.com/DilanBoskan) - Your contributions at the start of this project were essential to the success of UVR. Thank you!
-- [Bas Curtiz](https://www.youtube.com/user/bascurtiz) - Designed the official UVR logo, icon, banner, and splash screen.
-- [tsurumeso](https://github.com/tsurumeso) - Developed the original VR Architecture code. 
-- [Kuielab & Woosung Choi](https://github.com/kuielab) - Developed the original MDX-Net AI code. 
-- [Adefossez & Demucs](https://github.com/facebookresearch/demucs) - Developed the original Demucs AI code. 
-- [KimberleyJSN](https://github.com/KimberleyJensen) - Advised and aided the implementation of the training scripts for MDX-Net and Demucs. Thank you!
-- [Hv](https://github.com/NaJeongMo/Colab-for-MDX_B) - Helped implement chunks into the MDX-Net AI code. Thank you!
+## 致谢
+- [ZFTurbo](https://github.com/ZFTurbo) - 创建并训练了新的 MDX23C 模型权重。
+- [DilanBoskan](https://github.com/DilanBoskan) - 您在项目初期的贡献对 UVR 的成功至关重要。感谢您！
+- [Bas Curtiz](https://www.youtube.com/user/bascurtiz) - 设计了官方 UVR 标志、图标、横幅和启动画面。
+- [tsurumeso](https://github.com/tsurumeso) - 开发了原始 VR 架构代码。
+- [Kuielab & Woosung Choi](https://github.com/kuielab) - 开发了原始 MDX-Net AI 代码。
+- [Adefossez & Demucs](https://github.com/facebookresearch/demucs) - 开发了原始 Demucs AI 代码。
+- [KimberleyJSN](https://github.com/KimberleyJensen) - 为 MDX-Net 和 Demucs 的训练脚本实现提供建议和帮助。感谢您！
+- [Hv](https://github.com/NaJeongMo/Colab-for-MDX_B) - 帮助在 MDX-Net AI 代码中实现分块。感谢您！
 
-## Contributing
+## 贡献
 
-- For anyone interested in the ongoing development of **Ultimate Vocal Remover GUI**, please send us a pull request, and we will review it. 
-- This project is 100% open-source and free for anyone to use and modify as they wish. 
-- We only maintain the development and support for the **Ultimate Vocal Remover GUI** and the models provided. 
+- 对于任何对 **Ultimate Vocal Remover GUI** 的持续开发感兴趣的人，请向我们发送拉取请求，我们会进行审查。
+- 本项目完全开源，任何人都可以免费使用和修改。
+- 我们只维护 **Ultimate Vocal Remover GUI** 和提供的模型的开发和支持。
 
-## References
-- [1] Takahashi et al., "Multi-scale Multi-band DenseNets for Audio Source Separation", https://arxiv.org/pdf/1706.09588.pdf
+## 参考文献
+- [1] Takahashi 等人，"用于音频源分离的多尺度多频带 DenseNets"，https://arxiv.org/pdf/1706.09588.pdf
