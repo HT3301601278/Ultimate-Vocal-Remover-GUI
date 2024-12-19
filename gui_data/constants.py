@@ -1,6 +1,6 @@
 import platform
 
-#Platform Details
+#平台详情
 OPERATING_SYSTEM = platform.system()
 SYSTEM_ARCH = platform.platform()
 SYSTEM_PROC = platform.processor()
