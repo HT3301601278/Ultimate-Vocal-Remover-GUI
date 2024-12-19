@@ -18,16 +18,16 @@ BG_COLOR = '#0e0e0f'
 FG_COLOR = '#13849f'
 
 #Model Types
-VR_ARCH_TYPE = 'VR Arc'
+VR_ARCH_TYPE = 'VR Architecture'
 MDX_ARCH_TYPE = 'MDX-Net'
 DEMUCS_ARCH_TYPE = 'Demucs'
-VR_ARCH_PM = 'VR Architecture'
-ENSEMBLE_MODE = 'Ensemble Mode'
-ENSEMBLE_STEM_CHECK = 'Ensemble Stem'
+VR_ARCH_PM = 'VR Arch'
+ENSEMBLE_MODE = '合奏模式'
+ENSEMBLE_STEM_CHECK = '合奏检查'
 SECONDARY_MODEL = 'Secondary Model'
 DEMUCS_6_STEM_MODEL = 'htdemucs_6s'
 DEFAULT = "Default"
-ALIGNMENT_TOOL = 'Alignment Tool Options'
+ALIGNMENT_TOOL = '对齐工具'
 
 SINGLE_FILE = 'SINGLE_FILE'
 MULTIPLE_FILE = 'MULTI_FILE'
@@ -60,31 +60,31 @@ DEMUCS_VERSION_MAPPER = {
             DEMUCS_V4:DEMUCS_V4_TAG}
 
 #Download Center
-DOWNLOAD_FAILED = 'Download Failed'
-DOWNLOAD_STOPPED = 'Download Stopped'
-DOWNLOAD_COMPLETE = 'Download Complete'
-DOWNLOAD_UPDATE_COMPLETE = 'Update Download Complete'
-SETTINGS_MENU_EXIT = 'exit'
-NO_CONNECTION = 'No Internet Connection'
+DOWNLOAD_FAILED = '下载失败'
+DOWNLOAD_STOPPED = '下载已停止'
+DOWNLOAD_COMPLETE = '下载完成'
+DOWNLOAD_UPDATE_COMPLETE = '更新下载完成'
+SETTINGS_MENU_EXIT = '退出'
+NO_CONNECTION = '无网络连接'
 VIP_SELECTION = 'VIP:'
 DEVELOPER_SELECTION = 'VIP:'
-NO_NEW_MODELS = 'All Available Models Downloaded'
+NO_NEW_MODELS = '所有可用模型已下载'
 ENSEMBLE_PARTITION = ': '
-NO_MODEL = 'No Model Selected'
-CHOOSE_MODEL = 'Choose Model'
-SINGLE_DOWNLOAD = 'Downloading Item 1/1...'
-DOWNLOADING_ITEM = 'Downloading Item'
-FILE_EXISTS = 'File already exists!'
-DOWNLOADING_UPDATE = 'Downloading Update...'
-DOWNLOAD_MORE = 'Download More Models'
+NO_MODEL = '未选择模型'
+CHOOSE_MODEL = '选择模型'
+SINGLE_DOWNLOAD = '正在下载项目 1/1...'
+DOWNLOADING_ITEM = '正在下载项目'
+FILE_EXISTS = '文件已存在!'
+DOWNLOADING_UPDATE = '正在下载更新...'
+DOWNLOAD_MORE = '下载更多模型'
 IS_KARAOKEE = "is_karaoke"
 IS_BV_MODEL = "is_bv_model"
 IS_BV_MODEL_REBAL = "is_bv_model_rebalanced"
-INPUT_STEM_NAME = 'Input Stem Name'
+INPUT_STEM_NAME = '输入音轨名称'
 
 #Menu Options
 
-AUTO_SELECT = 'Auto'
+AUTO_SELECT = '自动'
 
 #LINKS
 DOWNLOAD_CHECKS = "https://raw.githubusercontent.com/TRvlvr/application_data/main/filelists/download_checks.json"
