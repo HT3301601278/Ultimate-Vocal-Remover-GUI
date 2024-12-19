@@ -3816,10 +3816,10 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         tab3 = ttk.Frame(tabControl)
         tab4 = ttk.Frame(tabControl)
 
-        tabControl.add(tab1, text ='Credits')
-        tabControl.add(tab2, text ='Resources')
-        tabControl.add(tab3, text ='Application License & Version Information')
-        tabControl.add(tab4, text ='Additional Information')
+        tabControl.add(tab1, text ='致谢')
+        tabControl.add(tab2, text ='资源')
+        tabControl.add(tab3, text ='应用许可证和版本信息')
+        tabControl.add(tab4, text ='附加信息')
 
         tabControl.pack(expand = 1, fill ="both")
         
@@ -3926,7 +3926,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
 
         section_title_Label(place=3, 
                             frame=more_info_tab_Frame, 
-                            text="Resources")
+                            text="资源")
 
         Link(place=4, 
              frame=more_info_tab_Frame, 
@@ -3955,37 +3955,37 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
              frame=more_info_tab_Frame, 
              text="FFmpeg", 
              link="https://www.wikihow.com/Install-FFmpeg-on-Windows", 
-             description="UVR relies on FFmpeg for processing non-wav audio files.\n" + \
-                         "If you are missing FFmpeg, please see the installation guide via the link provided.",
+             description="UVR 依赖 FFmpeg 来处理非 wav 音频文件。\n" + \
+                         "如果您缺少 FFmpeg，请通过提供的链接查看安装指南。",
              font=FONT_SIZE_1)
         
         Link(place=22, 
              frame=more_info_tab_Frame, 
              text="Rubber Band Library", 
              link="https://breakfastquay.com/rubberband/",
-             description="UVR uses the Rubber Band library for the sound stretch and pitch shift tool.\n" + \
-                         "You can get more information on it via the link provided.",
+             description="UVR 使用 Rubber Band 库进行声音拉伸和音调变换工具。\n" + \
+                         "您可以通过提供的链接获取更多信息。",
              font=FONT_SIZE_1)
         
         Link(place=26, 
              frame=more_info_tab_Frame, 
              text="Matchering", 
              link="https://github.com/sergree/matchering",
-             description="UVR uses the Matchering library for the \"Matchering\" Audio Tool.\n" + \
-                         "You can get more information on it via the link provided.",
+             description="UVR 使用 Matchering 库进行 \"Matchering\" 音频工具。\n" + \
+                         "您可以通过提供的链接获取更多信息。",
              font=FONT_SIZE_1)
         
         Link(place=30, 
              frame=more_info_tab_Frame, 
              text="Official UVR BMAC", 
              link=DONATE_LINK_BMAC, 
-             description="If you wish to support and donate to this project, click the link above!",
+             description="如果您希望支持并捐赠此项目，请点击上面的链接！",
              font=FONT_SIZE_1)
         
         appplication_license_tab_Frame = tk.Frame(tab3)
         appplication_license_tab_Frame.grid(row=0,column=0,padx=0,pady=0)
         
-        appplication_license_Label = tk.Label(appplication_license_tab_Frame, text='UVR License Information', font=(MAIN_FONT_NAME, f"{FONT_SIZE_6}", "bold"), justify="center", fg="#f4f4f4")
+        appplication_license_Label = tk.Label(appplication_license_tab_Frame, text='UVR 许可证信息', font=(MAIN_FONT_NAME, f"{FONT_SIZE_6}", "bold"), justify="center", fg="#f4f4f4")
         appplication_license_Label.grid(row=0,column=0,padx=0,pady=25)
         
         appplication_license_Text = tk.Text(appplication_license_tab_Frame, font=(MAIN_FONT_NAME, f"{FONT_SIZE_4}"), fg="white", bg="black", width=72, wrap=tk.WORD, borderwidth=0)
@@ -4015,10 +4015,10 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         auto_hyperlink(application_change_log_Text)
         application_change_log_Text.configure(state=tk.DISABLED)
 
-        self.menu_placement(help_guide_opt, "Information Guide")
+        self.menu_placement(help_guide_opt, "信息指南")
 
     def menu_error_log(self):#
-        """Open Error Log"""
+        """打开错误日志"""
 
         self.is_confirm_error_var.set(False)
         
@@ -4049,7 +4049,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         copy_text_Label = tk.Label(error_log_frame, textvariable=copied_var, font=(MAIN_FONT_NAME,  f"{FONT_SIZE_0}"), justify="center", fg="#f4f4f4")
         copy_text_Label.grid(padx=20,pady=0)
         
-        copy_text_Button = ttk.Button(error_log_frame, text=COPY_ALL_TEXT_TEXT, width=14, command=lambda:(pyperclip.copy(error_details_Text.get(1.0, tk.END+"-1c")), copied_var.set('Copied!')))
+        copy_text_Button = ttk.Button(error_log_frame, text=COPY_ALL_TEXT_TEXT, width=14, command=lambda:(pyperclip.copy(error_details_Text.get(1.0, tk.END+"-1c")), copied_var.set('已复制！')))
         copy_text_Button.grid(padx=20,pady=MENU_PADDING_1)
         
         report_issue_Button = ttk.Button(error_log_frame, text=REPORT_ISSUE_TEXT, width=14, command=lambda:webbrowser.open_new_tab(ISSUE_LINK))
@@ -6684,6 +6684,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             self.command_Text.write(time_elapsed())
             playsound(FAIL_CHIME) if self.is_task_complete_var.get() else None
             self.process_end(error=e)
+        
 
     #--Varible Methods--
 
