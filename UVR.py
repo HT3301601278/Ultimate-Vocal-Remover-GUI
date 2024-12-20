@@ -270,6 +270,8 @@ DEVERBER_MODEL_PATH = os.path.join(VR_MODELS_DIR, 'UVR-DeEcho-DeReverb.pth')
 MODEL_DATA_URLS = [VR_MODEL_DATA_LINK, MDX_MODEL_DATA_LINK, MDX_MODEL_NAME_DATA_LINK, DEMUCS_MODEL_NAME_DATA_LINK]
 MODEL_DATA_FILES = [VR_HASH_JSON, MDX_HASH_JSON, MDX_MODEL_NAME_SELECT, DEMUCS_MODEL_NAME_SELECT]
 
+DEFAULT_OVERLAP = 0.25
+
 file_check(os.path.join(MODELS_DIR, 'Main_Models'), VR_MODELS_DIR)
 file_check(os.path.join(DEMUCS_MODELS_DIR, 'v3_repo'), DEMUCS_NEWER_REPO_DIR)
 remove_unneeded_yamls(DEMUCS_MODELS_DIR)
@@ -354,7 +356,7 @@ class ModelData():
         self.mdx_batch_size = 1 if root.mdx_batch_size_var.get() == DEF_OPT else int(root.mdx_batch_size_var.get())
         self.mdxnet_stem_select = root.mdxnet_stems_var.get() 
         self.overlap = float(root.overlap_var.get()) if not root.overlap_var.get() == DEFAULT else 0.25
-        self.overlap_mdx = float(root.overlap_mdx_var.get()) if not root.overlap_mdx_var.get() == DEFAULT else root.overlap_mdx_var.get()
+        self.overlap_mdx = float(root.overlap_mdx_var.get()) if root.overlap_mdx_var.get() not in [DEFAULT, "默认"] else DEFAULT_OVERLAP
         self.overlap_mdx23 = int(float(root.overlap_mdx23_var.get()))
         self.semitone_shift = float(root.semitone_shift_var.get())
         self.is_pitch_change = False if self.semitone_shift == 0 else True
@@ -1828,8 +1830,8 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
         # Stem B
         self.is_secondary_stem_only_Demucs_Option = ttk.Checkbutton(master=self.options_Frame, textvariable=self.is_secondary_stem_only_Demucs_Text_var, variable=self.is_secondary_stem_only_Demucs_var, command=lambda:self.is_secondary_stem_only_Demucs_Option_toggle())
         self.is_secondary_stem_only_Demucs_Option_place = lambda:self.is_secondary_stem_only_Demucs_Option.place(x=CHECK_BOX_X, y=CHECK_BOX_Y, width=CHECK_BOX_WIDTH, height=CHECK_BOX_HEIGHT, relx=1/3, rely=7/self.COL2_ROWS, relwidth=1/3, relheight=1/self.COL2_ROWS)
-        self.is_secondary_stem_only_Demucs_Option_toggle = lambda:self.is_primary_stem_only_Demucs_var.set(False) if self.is_secondary_stem_only_Demucs_var.get() else self.is_primary_stem_only_Demucs_Option.configure(state=tk.NORMAL)
-        self.is_stem_only_Demucs_Options_Enable = lambda:(self.is_primary_stem_only_Demucs_Option.configure(state=tk.NORMAL), self.is_secondary_stem_only_Demucs_Option.configure(state=tk.NORMAL))
+        self.is_secondary_stem_only_Demucs_Option_toggle = lambda:self.is_primary_stem_only_var.set(False) if self.is_secondary_stem_only_Demucs_var.get() else self.is_primary_stem_only_Option.configure(state=tk.NORMAL)
+        self.is_stem_only_Demucs_Options_Enable = lambda:(self.is_primary_stem_only_Option.configure(state=tk.NORMAL), self.is_secondary_stem_only_Demucs_Option.configure(state=tk.NORMAL))
         self.help_hints(self.is_secondary_stem_only_Demucs_Option, text=SAVE_STEM_ONLY_HELP)
 
         ### ENSEMBLE MODE ###
