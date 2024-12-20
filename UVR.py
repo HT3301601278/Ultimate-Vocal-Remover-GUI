@@ -4243,7 +4243,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                     MAIN_ROW += 1
                     button_text = f" - Item {MAIN_ROW}" if len(main_selection.keys()) >= 2 else ''
                     link = create_link(links)
-                    link_button = ttk.Button(manual_downloads_link_Frame, text=f"Open Link to Model{button_text}", command=link).grid(row=MAIN_ROW,column=0,padx=0,pady=MENU_PADDING_1)
+                    link_button = ttk.Button(manual_downloads_link_Frame, text=f"打开模型链接{button_text}", command=link).grid(row=MAIN_ROW,column=0,padx=0,pady=MENU_PADDING_1)
             else:
                 link = f"{NORMAL_REPO}{main_selection}"
                 link_button = ttk.Button(manual_downloads_link_Frame, text=OPEN_LINK_TO_MODEL_TEXT, command=lambda:webbrowser.open_new_tab(link))
