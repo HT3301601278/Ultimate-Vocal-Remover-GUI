@@ -4,33 +4,29 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
-from collections import defaultdict
-from contextlib import contextmanager
-import math
-import os
-import tempfile
-import typing as tp
-
 import errno
 import functools
 import hashlib
 import inspect
 import io
+import math
 import os
 import random
 import socket
 import tempfile
+import typing as tp
 import warnings
 import zlib
-import tkinter as tk
+from collections import defaultdict
+from contextlib import contextmanager
 
-from diffq import UniformQuantizer, DiffQuantizer
+import torch
 import torch as th
 import tqdm
+from diffq import UniformQuantizer, DiffQuantizer
 from torch import distributed
 from torch.nn import functional as F
 
-import torch
 
 def unfold(a, kernel_size, stride):
     """Given input of size [*OT, T], output Tensor of size [*OT, F, K]

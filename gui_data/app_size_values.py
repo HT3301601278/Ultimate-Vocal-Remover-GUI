@@ -1,8 +1,9 @@
 import os
 import platform
-from screeninfo import get_monitors
+
 from PIL import Image
 from PIL import ImageTk
+from screeninfo import get_monitors
 
 OPERATING_SYSTEM = platform.system()
 

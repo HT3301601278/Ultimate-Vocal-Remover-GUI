@@ -7,16 +7,14 @@
 Code to apply a model to a mix. It will handle chunking with overlaps and
 inteprolation between chunks, as well as the "shift trick".
 """
-from concurrent.futures import ThreadPoolExecutor
 import random
 import typing as tp
-from multiprocessing import Process,Queue,Pipe
+from concurrent.futures import ThreadPoolExecutor
 
 import torch as th
+import tqdm
 from torch import nn
 from torch.nn import functional as F
-import tqdm
-import tkinter as tk
 
 from .demucs import Demucs
 from .hdemucs import HDemucs

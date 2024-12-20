@@ -1,13 +1,13 @@
+import io
+import math
+import platform
+import traceback
+
 import audioread
 import librosa
 import numpy as np
 import soundfile as sf
-import math
-import platform
-import traceback
-from . import pyrb
 from scipy.signal import correlate, hilbert
-import io
 
 OPERATING_SYSTEM = platform.system()
 SYSTEM_ARCH = platform.platform()

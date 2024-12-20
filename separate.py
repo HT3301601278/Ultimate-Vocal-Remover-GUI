@@ -1,38 +1,40 @@
 from __future__ import annotations
+
+import gc
+import gzip
+import math
+import os
+import warnings
+from pathlib import Path
 from typing import TYPE_CHECKING
+
+import audioread
+import librosa
+import numpy as np
+import onnxruntime as ort
+import pydub
+import soundfile as sf
+import torch
+# import random
+from onnx import load
+from onnx2pytorch import ConvertModel
+from scipy import signal
+
+import lib_v5.mdxnet as MdxnetSet
 from demucs.apply import apply_model, demucs_segments
 from demucs.hdemucs import HDemucs
 from demucs.model_v2 import auto_load_demucs_model_v2
 from demucs.pretrained import get_model as _gm
 from demucs.utils import apply_model_v1
 from demucs.utils import apply_model_v2
-from lib_v5.tfc_tdf_v3 import TFC_TDF_net, STFT
+from gui_data.constants import *
+from gui_data.error_handling import *
 from lib_v5 import spec_utils
+from lib_v5.tfc_tdf_v3 import TFC_TDF_net, STFT
 from lib_v5.vr_network import nets
 from lib_v5.vr_network import nets_new
 from lib_v5.vr_network.model_param_init import ModelParameters
-from pathlib import Path
-from gui_data.constants import *
-from gui_data.error_handling import *
-from scipy import signal
-import audioread
-import gzip
-import librosa
-import math
-import numpy as np
-import onnxruntime as ort
-import os
-import torch
-import warnings
-import pydub
-import soundfile as sf
-import lib_v5.mdxnet as MdxnetSet
-import math
-#import random
-from onnx import load
-from onnx2pytorch import ConvertModel
-import gc
- 
+
 if TYPE_CHECKING:
     from UVR import ModelData
 

@@ -8,8 +8,8 @@ import math
 
 import julius
 from torch import nn
-from .tasnet_v2 import ConvTasNet
 
+from .tasnet_v2 import ConvTasNet
 from .utils import capture_init, center_trim
 
 

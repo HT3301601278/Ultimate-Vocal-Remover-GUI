@@ -7,22 +7,19 @@
 """
 
 import logging
-from pathlib import Path
 import typing as tp
+from pathlib import Path
 
-#from dora.log import fatal
-
-import logging
-
-from diffq import DiffQuantizer
 import torch.hub
+from diffq import DiffQuantizer
 
+from .hdemucs import HDemucs
 from .model import Demucs
+from .repo import RemoteRepo, LocalRepo, ModelOnlyRepo, BagOnlyRepo, AnyModelRepo, ModelLoadingError  # noqa
 from .tasnet_v2 import ConvTasNet
 from .utils import set_state
 
-from .hdemucs import HDemucs
-from .repo import RemoteRepo, LocalRepo, ModelOnlyRepo, BagOnlyRepo, AnyModelRepo, ModelLoadingError  # noqa
+# from dora.log import fatal
 
 logger = logging.getLogger(__name__)
 ROOT_URL = "https://dl.fbaipublicfiles.com/demucs/mdx_final/"

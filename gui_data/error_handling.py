@@ -1,5 +1,5 @@
-from datetime import datetime
 import traceback
+from datetime import datetime
 
 CUDA_MEMORY_ERROR = "CUDA out of memory"
 CUDA_RUNTIME_ERROR = "CUDNN error executing cudnnSetTensorNdDescriptor"

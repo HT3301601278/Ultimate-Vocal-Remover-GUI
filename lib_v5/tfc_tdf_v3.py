@@ -1,6 +1,8 @@
+from functools import partial
+
 import torch
 import torch.nn as nn
-from functools import partial
+
 
 class STFT:
     def __init__(self, n_fft, hop_length, dim_f, device):

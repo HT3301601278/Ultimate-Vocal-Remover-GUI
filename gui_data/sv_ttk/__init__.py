@@ -1,5 +1,5 @@
-from pathlib import Path
 import platform
+from pathlib import Path
 
 if platform.system() == "Darwin":
     sun_valley_tcl = "sun-valley_darwin.tcl"

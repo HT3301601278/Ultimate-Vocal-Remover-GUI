@@ -8,16 +8,15 @@ A repo can either be the main remote repository stored in AWS, or a local reposi
 with your own models.
 """
 
+import typing as tp
 from hashlib import sha256
 from pathlib import Path
-import typing as tp
 
 import torch
 import yaml
 
 from .apply import BagOfModels, Model
 from .states import load_model
-
 
 AnyModel = tp.Union[Model, BagOfModels]
 

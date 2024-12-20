@@ -1,10 +1,11 @@
 import os
 import subprocess
-import tempfile
-import six
-import numpy as np
-import soundfile as sf
 import sys
+import tempfile
+
+import numpy as np
+import six
+import soundfile as sf
 
 if getattr(sys, 'frozen', False):
     BASE_PATH_RUB = sys._MEIPASS

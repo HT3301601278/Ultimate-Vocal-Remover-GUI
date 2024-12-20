@@ -8,20 +8,19 @@
 This code contains the spectrogram and Hybrid version of Demucs.
 """
 import math
+from fractions import Fraction
 
-from .filtering import wiener
 import torch
+from einops import rearrange
 from torch import nn
 from torch.nn import functional as F
-from fractions import Fraction
-from einops import rearrange
-
-from .transformer import CrossTransformerEncoder
 
 from .demucs import rescale_module
-from .states import capture_init
-from .spec import spectro, ispectro
+from .filtering import wiener
 from .hdemucs import pad1d, ScaledEmbedding, HEncLayer, MultiWrap, HDecLayer
+from .spec import spectro, ispectro
+from .states import capture_init
+from .transformer import CrossTransformerEncoder
 
 
 class HTDemucs(nn.Module):

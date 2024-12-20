@@ -6,18 +6,17 @@
 """
 Utilities to save and load models.
 """
-from contextlib import contextmanager
-
 import functools
 import hashlib
 import inspect
 import io
-from pathlib import Path
 import warnings
+from contextlib import contextmanager
+from pathlib import Path
 
-from omegaconf import OmegaConf
-from diffq import DiffQuantizer, UniformQuantizer, restore_quantized_state
 import torch
+from diffq import DiffQuantizer, UniformQuantizer, restore_quantized_state
+from omegaconf import OmegaConf
 
 
 def get_quantizer(model, args, optimizer=None):

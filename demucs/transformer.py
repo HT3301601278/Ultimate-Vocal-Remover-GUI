@@ -5,14 +5,14 @@
 # LICENSE file in the root directory of this source tree.
 # First author is Simon Rouard.
 
+import math
 import random
 import typing as tp
 
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import numpy as np
-import math
 from einops import rearrange
 
 
