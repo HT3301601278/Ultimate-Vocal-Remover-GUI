@@ -5164,7 +5164,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                         widget.configure(state=tk.NORMAL)
                     
                 if refresh_list_Button:
-                    self.download_progress_info_var.set('Download List Refreshed!')
+                    self.download_progress_info_var.set('下载列表已刷新！')
 
                 if OPERATING_SYSTEM=="Darwin":
                     self.lastest_version = self.online_data["current_version_mac"]
@@ -5185,7 +5185,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                             self.app_update_button_Text_var.set(ROLL_BACK_TEXT)
                         else:
                             self.app_update_status_Text_var.set(f"Update Found: {self.lastest_version}")
-                            self.app_update_button_Text_var.set('Click Here to Update')
+                            self.app_update_button_Text_var.set('点击此处更新')
                         
                         if OPERATING_SYSTEM == "Windows":
                             self.download_update_link_var.set('{}{}{}'.format(UPDATE_REPO, self.lastest_version, application_extension))

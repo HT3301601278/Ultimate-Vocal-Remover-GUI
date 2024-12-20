@@ -1200,14 +1200,14 @@ AUDIO_TOOLS_HELP = (
     '• 音频匹配: 选择2个音频文件。匹配算法将使目标音频具有与参考音频相同的RMS、频率响应、峰值振幅和立体声宽度。'
 )
              
-PRE_PROC_MODEL_INST_MIX_HELP = 'When enabled, the application will generate a third output without the selected stem and vocals.'         
-MODEL_SAMPLE_MODE_HELP = ('Allows the user to process only part of a track to sample settings or a model without running a full conversion.\n\nNotes:\n\n'
-                         '• The number in the parentheses is the current number of seconds the generated sample will be.\n'
-                         '• You can choose the number of seconds to extract from the track in the \"Additional Settings\" menu.')
+PRE_PROC_MODEL_INST_MIX_HELP = '启用后，应用程序将生成第三个输出，其中不包含所选音轨和人声。'
+MODEL_SAMPLE_MODE_HELP = ('允许用户仅处理音轨的一部分来测试设置或模型，而无需进行完整转换。\n\n注意：\n\n'
+                         '• 括号中的数字是生成的样本将持续的秒数。\n'
+                         '• 您可以在"附加设置"菜单中选择要从音轨中提取的秒数。')
                     
-POST_PROCESS_THREASHOLD_HELP = ('Allows the user to control the intensity of the Post_process option.\n\nNotes:\n\n'
-                               '• Higher values potentially remove more artifacts. However, bleed might increase.\n'
-                               '• Lower values limit artifact removal.')
+POST_PROCESS_THREASHOLD_HELP = ('允许用户控制后处理选项的强度。\n\n注意：\n\n'
+                               '• 较高的值可能会去除更多伪音。但是，泄漏可能会增加。\n'
+                               '• 较低的值会限制伪音去除。')
 
 BATCH_SIZE_HELP = ('指定一次处理的批次数量。\n\n注意事项：\n\n'
                                 '• 较高的值会增加RAM使用量，但处理时间会稍微更快。\n'
