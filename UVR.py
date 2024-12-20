@@ -2935,7 +2935,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                     self.inputPaths = tuple(inputPaths)
                     self.update_inputPaths()
                 else:
-                    input_info_text_var.set(f'No errors found!')
+                    input_info_text_var.set(f'未发现错误！')
                     
                 audio_input_total()
             else:
@@ -2950,14 +2950,14 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
             
             if not self.thread_check(self.active_processing_thread):
                 if not self.thread_check(self.verification_thread):
-                    varification_text_var.set('Stop Progress')
+                    varification_text_var.set('停止进程')
                     input_files_listbox_Option.configure(state=tk.DISABLED)
                     self.verification_thread = KThread(target=lambda:verify_audio(is_create_samples=is_create_samples))
                     self.verification_thread.start()
                 else:
                     input_files_listbox_Option.configure(state=tk.NORMAL)
                     varification_text_var.set(VERIFY_INPUTS_TEXT)
-                    input_info_text_var.set('Process Stopped')
+                    input_info_text_var.set('进程已停止')
                     self.verification_thread.kill()
             else:
                 input_info_text_var.set('You cannot verify inputs during an active process.')
