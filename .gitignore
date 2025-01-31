@@ -31,3 +31,4 @@ Thumbs.db
 *.cfg
 data.pkl
 *.pth
+models/
